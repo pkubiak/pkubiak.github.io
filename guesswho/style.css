@@ -6,7 +6,8 @@
   bottom: 0;
 }
 
-button, input {
+button,
+input {
   font-size: 64px !important;
 }
 
@@ -22,18 +23,47 @@ button, input {
 
 #board button {
   margin: 6px;
-  font-size: 20pt !important;
   background-position: 50% 38.2%;
   background-size: 80%;
   background-repeat: no-repeat;
   position: relative;
-
+  overflow: hidden;
+  transition: background ease 0.2s;
 }
 
-#board button h1{
-  position:absolute;
-  left:0; right:0;
+#board button h1 {
+  position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  padding:6px;
+  margin: 0;
+  padding: 6px;
   text-shadow: 0 0 6px #0009;
+  font-size: 20pt;
+  background: #0007;
+  transition: transform ease 0.2s;
+  transform: translateY(0%);
+}
+
+#board button button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 10pt !important;
+  font-weight: bold;
+}
+
+#board button:hover {
+  background-size: 120%;
+}
+
+#board button:hover h1 {
+  transform: translateY(100%);
+}
+
+.centerize {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
