@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- start at 2020/01/18 12:15:00 -->
+<html lang="en">
+<head>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="initial" class="full">
+  <div class="container text-center">
+    <img src="http://cdn.toy-tma.com/wp-content/uploads/2016/03/HA5696.jpg" class="mb-5"/>
+    <button class="btn btn-primary btn-lg btn-block" onclick="create_game()">Create Game</button><br/>
+
+    <button class="btn btn-primary btn-lg btn-block" onclick="join_game()">Join Game</button>
+  </div>
+</div>
+
+<div id="create_game" class="full d-none">
+  <div class="container text-center">
+    <h1 class="display-2">Game seed</h1>
+    <p class="display-3">Pass it to the opponent!</p>
+
+    <h2 class="my-5 display-1 font-weight-bold" style="font-family:monospace" id="game_seed"></h2>
+
+    <button class="btn btn-primary btn-lg btn-block" onclick="start_game(true)">Continue</button>
+  </div>
+</div>
+
+<div id="join_game" class="full d-none">
+  <div class="container text-center">
+    <h1 class="display-2">Game seed</h1>
+    <p class="display-3">Acquire it from the opponent!</p>
+
+    <input id="join_seed" class="form-control mx-auto my-5 text-center" maxlength="6" style="width: 300px" minlength="6"/>
+
+    <button class="btn btn-primary btn-lg btn-block" onclick="start_game(false)">Continue</button>
+  </div>
+</div>
+
+<div id="start_game" class="full d-none">
+<div id="board" class="full"></div>
+</div>
+
+</body>
+</html>
