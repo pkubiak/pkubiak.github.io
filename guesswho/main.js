@@ -26,7 +26,7 @@ function random() {
 function prepare_game(_seed) {
   // console.warn('prepare_game:', _seed, seed);
   console.log('Prepare game:', _seed);
-
+  seed = _seed.seed;
   let sorted_items = [];
   for(let i = 0; i < data.length; i++)
     sorted_items.push([random(), i]);
@@ -159,9 +159,7 @@ function show_board(items) {
       button.id = 'cell_'+i;
       button.style.backgroundImage = 'url('+items[i].image+')'
 
-      button.innerHTML = '<h1>'+items[i].title+'</h1><button class="btn btn-sm btn-secondary" onclick="show_window(event, \''+items[i].url+'\')">?</button>';
-      button.style.gridColumn = (x+1)+'/ span 1';
-      button.style.gridRow = (y+1)+'/ span 1';
+      button.innerHTML = '<h4>'+items[i].title+'</h4><button class="btn btn-sm btn-secondary" onclick="show_window(event, \''+items[i].url+'\')">?</button>';
 
       button.onclick = function(event) {
         $(this).toggleClass('opaque');
