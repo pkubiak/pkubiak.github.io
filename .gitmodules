@@ -2,3 +2,7 @@
 	path = guess-who
 	url = https://github.com/pkubiak/guess-who
 	branch = master
+[submodule "frozen-fruits"]
+	path = frozen-fruits
+	url = https://github.com/pkubiak/frozen-fruits
+	branch = master
