@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Keystroke Dynamics</title>
+</head>
+
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-5">Keystroke Dynamics</h1>
+    
+<div class="row">
+<div class="col-8">
+<div class="input-group mb-3">
+    <select class="custom-select custom-select-lg form-control" onchange="update_task(this.value)" id="taskSelect">
+        <option value="">-- Select task --</option>
+        <optgroup label="Passwords">
+            <option value="kicsikutyatarka">easy</option>
+            <option value="Kktsf2!2014">logicalstrong</option>
+            <option value=".tie5Roanl">strong</option>
+        </optgroup>
+        <optgroup label="Texts">
+            <option value="Lorem ipsum dolor sit amet dui eu mollis tincidunt, orci vitae sem.">Lorem ipsum</option>
+            <option value="Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.">Pan Tadeusz</option>
+            <option value="Zbłaźń mżystość ględów hiperfunkcją.">Pangram</option>
+        </optgroup>
+        <optgroup label="Source code">
+            <option value="def factorial(n): return reduce(mul, range(1,n+1), 1)">Python</option>
+            <option value="var factorial = n => (n < 2) ? 1 : n * factorial(n - 1);">JavaScript</option>
+        </optgroup>
+    </select>
+    
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="reset_task()">Retry</button>
+    </div>
+</div>
+
+<div class="alert alert-primary" id="taskText"></div>
+
+
+<div class="form-group">
+    <label>Retype text above:</label>
+    <input class="form-control form-control-lg" id="taskInput" onkeydown="input(event)" onkeyup="input(event)" disabled>
+</div>
+
+<hr/>
+<h2>Dynamic Time Warping (Hold time)</h2>
+<canvas class="empty" id="canvas"></canvas>
+<small>Collect at least 2 recordings to display plot.</small>
+
+</div>
+<div class="col-4">
+<div class="text-right">
+    <button class="btn btn-sm btn-link" onclick="exportData(true)">Export</button>
+</div>
+
+<table class="table table-striped table-hover">
+<thead class="thead-light">
+<tr>
+    <th>Key</th>
+    <th>H [ms]</th>
+    <th>UD [ms]</th>
+    <th>DD [ms]</th>
+</tr>
+</thead>
+<tbody id="data"></tbody>
+<tfoot id="summary"></tfoot>
+</table>
+
+</div>
+</div>
+</div>
+
+<style>
+#taskText span {
+    font-size: 26pt;
+    letter-spacing: 2px;;
+}
+.success {
+    background: #28a745;
+}
+.current {
+    text-decoration: underline;
+}
+.blink {
+    animation: blink 0.33s;
+}
+@keyframes blink {
+    0%{background: white;}
+    95%{background: #f1b0b7}
+    100%{background: white;}
+}
+canvas {
+    /* background: red; */
+    /* border: 5px solid green; */
+    max-width: 100%;
+}
+canvas.empty {
+height: 0;
+}
+canvas:not(.empty) + small{
+	display:none;
+}
+canvas + small{
+	line-height: 400%;
+	text-align: center;
+	display: block;
+	font-size: 14pt;
+}
+</style>
+<script>
+let INDEX, TASK, MISTAKES, TOTAL, CACHE, START_TIME, FINISH_TIME;
+
+function reset_task() {
+    update_task(document.querySelector('#taskSelect').value, true);
+}
+
+function update_task(text, retry) {
+		if(!text)return;
+    INDEX = MISTAKES = TOTAL = 0; TASK = text;
+
+    let out = [];
+    for(let i=0;i<text.length;i++)
+        out.push('<span id="char_' + i + '">' + text[i] + '</span>');
+    
+    document.querySelector('#taskText').innerHTML = out.join('');
+    document.querySelector('#char_0').classList.add('current');
+
+    document.querySelector('#taskInput').value = '';
+    document.querySelector('#taskInput').disabled = false;
+    document.querySelector('#taskInput').focus(); 
+    
+    document.querySelector('#data').innerHTML = document.querySelector('#summary').innerHTML = '';
+    // console.log(text);
+    CACHE = {}
+    PREVDOWN = PREVUP = START_TIME = FINISH_TIME = undefined;
+    if(!retry) {
+        document.querySelector('#canvas').classList.add('empty');
+				PREV_VALUES = null;
+		}
+}
+
+function completed (){
+    document.querySelector('#summary').innerHTML += "<tr><th colspan='2'>Mistakes</th><th colspan='2'>" + MISTAKES + " (" + parseInt(100.0*MISTAKES/TASK.length) + "%)</th></tr>";
+    let total_time = parseInt(FINISH_TIME - START_TIME);
+    document.querySelector('#summary').innerHTML += "<tr><th colspan='2'>Total time</th><th colspan='2'>"+total_time+"ms</th></tr>";
+
+    createPlot();
+}
+
+function input(event) {
+    console.log(event.type, event.code, event.metaKey, event);
+
+    if(!START_TIME)
+        START_TIME = event.timeStamp;
+    if(event.type == 'keydown') {
+        if(INDEX == TASK.length) {
+            event.preventDefault();
+            return;
+        }
+
+        let isVisible = (event.key.length == 1);
+        let isCorrect = event.key == TASK[INDEX];
+        let tr = document.createElement('tr');
+        let klass = isVisible ? (isCorrect ? 'table-success' : 'table-danger') : '';
+        let ud = PREVUP ? parseInt(event.timeStamp - PREVUP.timeStamp) : '';
+        let dd = PREVDOWN ? parseInt(event.timeStamp - PREVDOWN.timeStamp) : '';
+        tr.innerHTML = '<td>'+event.code+'</td><td></td><td>'+ud+'</td><td>'+dd+'</td>';
+        if(klass)tr.classList.add(klass);
+        document.querySelector('#data').appendChild(tr);
+
+        if(isCorrect) {
+            document.querySelector('#char_'+INDEX).classList.remove('current');
+            document.querySelector('#char_'+INDEX).classList.add('success');
+            INDEX++;
+
+            if(INDEX < TASK.length)
+                document.querySelector('#char_'+INDEX).classList.add('current');
+        } else {
+            event.preventDefault();
+            if(isVisible) {
+                MISTAKES++;
+                let el = document.querySelector('#taskInput');
+                el.classList.remove('blink');
+                void el.offsetWidth;
+                el.classList.add('blink');
+            }
+        }
+
+        CACHE[event.code] = [tr, event];
+        PREVDOWN = event;
+    }
+
+    if(event.type == 'keyup' && CACHE.hasOwnProperty(event.code)) {
+        let [tr, event_orig] = CACHE[event.code];
+        let hold = parseInt(event.timeStamp - event_orig.timeStamp)
+        tr.querySelector('td:nth-child(2)').innerHTML = hold;
+
+        delete CACHE[event.code];
+        if(INDEX == TASK.length && Object.keys(CACHE).length === 0) {
+            document.querySelector('#taskInput').disabled = true;
+            FINISH_TIME = event.timeStamp;
+            completed();
+        }
+        PREVUP = event;
+    }
+    
+    return false;
+
+}
+
+function plotLine(ctx, points) {
+  ctx.beginPath();
+  ctx.moveTo(points[0].x, points[0].y);
+  for(let i=1;i<points.length;i++)
+      ctx.lineTo(points[i].x, points[i].y);
+  ctx.stroke();
+}
+
+let PREV_VALUES =null;
+function createPlot() {
+  let values = exportData();
+
+	if(PREV_VALUES) {
+		let scale = 200 / Math.max.apply(Math, (values.concat(PREV_VALUES)).map(x => x.H));
+
+		points1 = values.map(function(el, i){
+			return {
+				x: i*600/(values.length-1), 
+				y: 200 - scale * el.H
+			};
+		});
+	
+		points2 = PREV_VALUES.map(function(el, i){
+			return {
+				x: i*600/(PREV_VALUES.length-1),
+				y: 400 - scale * el.H
+			};
+		});
+
+
+		let canvas = document.querySelector('#canvas');
+		canvas.classList.remove('empty');
+	  
+		canvas.width = 600;
+		canvas.height = 400;
+		
+		let ctx = canvas.getContext('2d');
+		ctx.lineWidth = 3;
+		ctx.strokeStyle = '#009900';
+		plotLine(ctx, points1);
+
+		ctx.strokeStyle = '#333399';
+		plotLine(ctx, points2);
+
+		// Display Dynamic Time Warping
+		let matching = seqDist(values, PREV_VALUES);
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = 'red';
+		ctx.beginPath();
+
+		while(matching.prev != null) {
+			console.log(matching);
+			ctx.moveTo(points1[matching.s-1].x, points1[matching.s-1].y);
+			ctx.lineTo(points2[matching.t-1].x, points2[matching.t-1].y);
+			matching = matching.prev;
+		}
+		ctx.stroke();
+	}
+
+	PREV_VALUES = values;
+}
+
+function seqDist(s, t) {
+	console.log('s:', s);
+	console.log('t:', t);
+	let grid = [];
+
+	// Create Grid
+	for(let y=0;y<=s.length;y++) {
+		let row = [];
+		for(let x=0;x<=t.length;x++)
+			row.push({dir: null,  cost: Infinity});
+		grid.push(row);
+	}
+
+	// Initilize boundary
+	for(let i=1;i<=s.length;i++)
+		grid[i][0].cost = Infinity;
+	for(let i=1;i<=t.length;i++)
+		grid[0][i].cost = Infinity;
+	grid[0][0].cost = 0;
+
+	
+	for(let y=1;y<=s.length;y++)
+		for(let x=1;x<=t.length;x++) {
+			let cost = Math.abs(s[y-1].H - t[x-1].H);
+			console.log(cost);
+			if(grid[y-1][x].cost < grid[y][x].cost)
+				grid[y][x] = {cost: grid[y-1][x].cost, prev: grid[y-1][x]};
+			if(grid[y][x-1].cost < grid[y][x].cost)
+				grid[y][x] = {cost: grid[y][x-1].cost, prev: grid[y][x-1]};
+			if(grid[y-1][x-1].cost < grid[y][x].cost)
+				grid[y][x] = {cost: grid[y-1][x-1].cost, prev: grid[y-1][x-1]};
+			console.log(grid[y][x].cost);
+			grid[y][x].cost += cost;
+			grid[y][x].s = y; grid[y][x].t = x;
+		}
+	return grid[s.length][t.length];
+}
+
+function exportData(showWindow) {
+	let records = [];
+	for(let tr of document.querySelectorAll('#data tr')) {
+		let record = Array.from(tr.querySelectorAll('td')).map(el => el.innerText);
+		records.push({
+			key: record[0],
+			H: parseInt(record[1]),
+			UD: parseInt(record[2]),
+			DD: parseInt(record[3]),
+			ok: !tr.classList.contains('table-danger')
+		});
+  }
+	if(showWindow) {
+		var myWindow = window.open("", "", "width=600,height=400");
+		myWindow.document.write(JSON.stringify(records));
+	} else 
+		return records;
+}
+</script>
+</body>
+</html>
