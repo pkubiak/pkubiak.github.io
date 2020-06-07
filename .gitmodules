@@ -10,3 +10,7 @@
 	path = gran-trak-2020
 	url = https://github.com/pkubiak/gran-trak-2020.git
 	branch = master
+[submodule "monster-o-brick"]
+	path = monster-o-brick
+	url = https://github.com/pkubiak/monster-o-brick.git
+	branch = master
