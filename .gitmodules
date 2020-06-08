@@ -14,7 +14,3 @@
 	path = monster-o-brick
 	url = https://github.com/pkubiak/monster-o-brick.git
 	branch = master
-[submodule "pylobot"]
-	path = pylobot
-	url = https://github.com/pkubiak/pylobot.git
-	branch = master
