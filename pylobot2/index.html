@@ -16,70 +16,106 @@ select {
     top: 10px;
 }
 </style>
+<!-- https://github.com/colobot/colobot/wiki/Working-with-Colobot:-Gold-Edition-models -->
 <select></select>
 
 <script type="module">
 
 import * as THREE from './src/three.module.js';
-
-var camera, scene, renderer;
+import {OrbitControls} from './src/OrbitControls.js';
+var camera, scene, renderer, controls;
 var mesh;
 
+function parseTriangle(lines) {
+    let ids = ['p1', 'p2', 'p3']
+    let result = {vertices: [null, null, null], tex1: null, tex2: null};
 
-function createModel(text) {
-    let fragments = text.split('\n\n');
-    var geom = new THREE.Geometry();
-    let textures = {};
-    let texture;
-    for(let fragment of fragments) {
-        if(fragment.indexOf('p1') == -1)
-            continue;
-        let lines = fragment.split('\n').filter(line => !line.startsWith('#'));
-        let vertex = {}, normals = {}, uvs = {}, state;
-        for(let line of lines) {
-            let tokens = line.split(' ');
-            if(['p1', 'p2', 'p3'].includes(tokens[0])){
-                vertex[tokens[0]] = new THREE.Vector3(
+    for(let line of lines) {
+        let tokens = line.split(' ');
+
+        if(['p1', 'p2', 'p3'].includes(tokens[0])){
+            result.vertices[ids.indexOf(tokens[0])] = {
+                coordinates: new THREE.Vector3(
                     parseFloat(tokens[2]),
                     parseFloat(tokens[3]),
                     parseFloat(tokens[4])
-                );
-                normals[tokens[0]] = new THREE.Vector3(
+                ),
+                normal: new THREE.Vector3(
                     parseFloat(tokens[6]),
                     parseFloat(tokens[7]),
                     parseFloat(tokens[8])
-                );
-                uvs[tokens[0]] = new THREE.Vector2(
+                ),
+                uv1: new THREE.Vector2(
                     parseFloat(tokens[10]),
                     1 - parseFloat(tokens[11]),
-                );
-            }
-            if(tokens[0] == 'tex1') {
-                if(!(tokens[1] in textures))
-                    textures[tokens[1]] = new THREE.TextureLoader().load('https://raw.githubusercontent.com/colobot/colobot-data/master/textures/objects/' + tokens[1]);
-                texture = textures[tokens[1]];
-            }
-            if(tokens[0] == 'state')
-                state = parseInt(tokens[1])
-        }
-
-        // if(state != 0)
-        //     continue;
-
-        geom.vertices.push(vertex['p1']);
-        geom.vertices.push(vertex['p2']);
-        geom.vertices.push(vertex['p3']);
-
-        geom.faces.push(new THREE.Face3(geom.vertices.length-3, geom.vertices.length-2, geom.vertices.length-1, [normals['p1'], normals['p2'], normals['p3']]));
-        geom.faceVertexUvs[0].push([uvs['p1'], uvs['p2'], uvs['p3']]);
+                ),
+                uv2: new THREE.Vector2(
+                    parseFloat(tokens[13]),
+                    1 - parseFloat(tokens[14]),
+                )
+            };
+        } 
+        if(tokens[0] == 'tex1')
+            result.tex1 = tokens[1];
+        if(tokens[0] == 'tex2')
+            result.tex2 = tokens[1];
+        if(tokens[0] == 'var_tex2')
+            result.var_tex2 = (tokens[1] == 'Y');
+        if(tokens[0] == 'state')
+            result.state = parseInt(tokens[1]);
+        //  {
+        //     if(!(tokens[1] in textures))
+        //         textures[tokens[1]] = new THREE.TextureLoader().load('https://raw.githubusercontent.com/colobot/colobot-data/master/textures/objects/' + tokens[1]);
+        //     texture = textures[tokens[1]];
+        // }
+        // if(tokens[0] == 'state')
+        //     state = parseInt(tokens[1])
     }
-    geom.computeFaceNormals();
-    // geom.computeVertexNormals();
-    // geometry.computeFaceNormals ();
-    var material = new THREE.MeshNormalMaterial();
-    material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide, depthTest: true, transparent: true} );
-    return new THREE.Mesh( geom, material);
+    return result;
+}
+function createModel(text) {
+    let geometries = {};
 
+    for(let fragment of text.split('\n\n')) {
+        if(fragment.indexOf('p1') == -1)
+            continue;
+        let lines = fragment.split('\n').filter(line => !line.startsWith('#'));
+        let triangle = parseTriangle(lines);
+
+        if(triangle.tex2)
+            console.warn(triangle.tex2);
+
+        if(!(triangle.tex1 in geometries))
+            geometries[triangle.tex1] = new THREE.Geometry();
+        let geometry = geometries[triangle.tex1];
+
+        geometry.vertices.push(triangle.vertices[0].coordinates);
+        geometry.vertices.push(triangle.vertices[1].coordinates);
+        geometry.vertices.push(triangle.vertices[2].coordinates);
+
+        geometry.faces.push(
+            new THREE.Face3(
+                geometry.vertices.length - 3, geometry.vertices.length - 2, geometry.vertices.length - 1,
+                [triangle.vertices[0].normal, triangle.vertices[1].normal, triangle.vertices[2].normal]
+            )
+        );
+        geometry.faceVertexUvs[0].push([
+            triangle.vertices[0].uv1, triangle.vertices[1].uv1, triangle.vertices[2].uv1
+        ]);
+    }
+
+    let group = new THREE.Group();
+    for(let key in geometries) {
+        let geometry = geometries[key];
+        geometry.computeFaceNormals();
+
+        let texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/colobot/colobot-data/master/textures/objects/' + key);
+        let material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide, depthTest: true, transparent: true} );
+        group.add(new THREE.Mesh(geometry, material));
+    }
+
+    // var material = new THREE.MeshNormalMaterial();
+    return group;
 }
 
 function init() {
@@ -88,26 +124,6 @@ function init() {
     camera.position.y = 0;
     scene = new THREE.Scene();
 
-    // var texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/colobot/colobot-data/master/textures/objects/ant.png');
-
-    // var geom = new THREE.BoxBufferGeometry( 2, 2, 2 );
-    // var geom = new THREE.Geometry();
-    // var v1 = new THREE.Vector3(0,0,0);
-    // var v2 = new THREE.Vector3(30,0,0);
-    // var v3 = new THREE.Vector3(30,30,0);
-
-    // geom.vertices.push(v1);
-    // geom.vertices.push(v2);
-    // geom.vertices.push(v3);
-
-    // geom.faces.push( new THREE.Face3( 0, 1, 2 ) );
-    // geom.computeFaceNormals();
-    // var material = new THREE.MeshBasicMaterial( { map: texture } );
-
-    // mesh = new THREE.Mesh( geom, material );
-
-    // mesh = createModel(model);
-    // SCENE.add(mesh);
     document.querySelector('select').addEventListener('change', changeModel);
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -115,6 +131,7 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    controls = new OrbitControls( camera, renderer.domElement );
     //
 
     window.addEventListener('resize', onWindowResize, false);
@@ -133,17 +150,15 @@ function changeModel() {
             while(scene.children.length > 0){ 
                 scene.remove(scene.children[0]); 
             }
-            let minDist=0;
 
-            for(let v of mesh.geometry.vertices) {
-                let dist = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-                if(dist > minDist)
-                    minDist = dist;
-            }
+            var bbox = new THREE.Box3().setFromObject(mesh);
+            let c = bbox.getCenter(new THREE.Vector3());
+            mesh.translateOnAxis(c, -1);
             scene.add(mesh);
             // var helper = new FaceNormalsHelper( mesh, 1, 0x00ff00, 1 );
             // scene.add( helper );
-            camera.position.z = minDist + 10;
+            camera.position.z = 40;
+            controls.update();
         });
 }
 
@@ -161,7 +176,7 @@ function animate() {
     requestAnimationFrame( animate );
 
     // mesh.rotation.x += 0.005;
-    scene.rotation.y += 0.01;
+    // scene.rotation.y += 0.01;
 
     renderer.render( scene, camera );
 
