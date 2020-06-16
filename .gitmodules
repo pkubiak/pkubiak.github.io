@@ -14,3 +14,7 @@
 	path = monster-o-brick
 	url = https://github.com/pkubiak/monster-o-brick.git
 	branch = master
+[submodule "swim-nemo-swim"]
+	path = swim-nemo-swim
+	url = https://github.com/pkubiak/swim-nemo-swim.git
+	branch = master
