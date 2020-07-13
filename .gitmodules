@@ -18,3 +18,7 @@
 	path = swim-nemo-swim
 	url = https://github.com/pkubiak/swim-nemo-swim.git
 	branch = master
+[submodule "spotify"]
+	path = spotify
+	url = https://github.com/pkubiak/spotify-view.git
+	branch = master
