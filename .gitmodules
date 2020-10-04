@@ -22,3 +22,7 @@
 	path = spotify
 	url = https://github.com/pkubiak/spotify-view.git
 	branch = master
+[submodule "unicode-madness"]
+	path = unicode-madness
+	url = https://github.com/pkubiak/unicode-madness.git
+	branch = master
