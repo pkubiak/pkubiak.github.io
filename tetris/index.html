@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="onload()" onkeydown="keydown(event)">
+
+<main>
+    <h2 id="score">00000</h2>
+    <div id="screen"></div>
+</main>
+
+<style>
+body {
+    text-align: center;
+}
+main {
+    display: inline-block;
+}
+h2 {
+    text-align: right;
+    font-size: 40px;
+    margin:0;
+    padding: 10px;
+    font-family: monospace;;
+}
+#screen {
+    position: relative;
+    background: grey;
+    border: 10px solid black;
+    overflow:hidden;
+}
+
+.cell {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border: 6px rgb(204, 0, 0) outset;
+    transition: left 0.25s, top 0.25s, opacity 0.5s, border-color 0.25s, background-color 0.25s;
+}
+
+</style>
+<script>
+const CELL_SIZE = 32, HEIGHT=20, WIDTH=10;
+let SCORE = 0, DISPLAY_SCORE = 0;
+
+const SHAPES = [
+    [   
+        'xx  x',
+        ' xxxx',
+        ' x  x'
+    ],
+    [
+        'xx',
+        'xx',
+    ],
+    [
+        'xxx',
+        'x  ',
+    ],
+    [
+        'x  ',
+        'xxx',
+    ],
+    ['xxxx'],
+    [
+        ' xx',
+        'xx ',
+    ],
+    [
+        'xx ',
+        ' xx',
+    ]
+];
+
+let MAP = null, CURRENT_SHAPE = null, SCREEN = null, LOOP_INTERVAL=null;
+
+function build_shape(shape) {
+    let els = [];
+    let dy = -shape.length, dx = 0;
+    for(let y=0;y<shape.length;y++)
+        for(let x=0;x<shape[y].length;x++)
+            if(shape[y][x] == 'x') {
+                let el = document.createElement('div');
+                el.className = 'cell';
+                el.style.left = (CELL_SIZE * (x+dx)) + 'px';
+                el.style.top = (CELL_SIZE * (y+dy)) + 'px';
+                els.push({'el': el, 'x': x+dx, 'y': y+dy, 'rot': 0});
+            }
+
+    return els;
+}
+function can_move(dx, dy) {
+    if(CURRENT_SHAPE) {
+        for(let item of CURRENT_SHAPE) {
+            let x = item.x + dx, y = item.y + dy;
+            if(x < 0 || x >= WIDTH || y >= HEIGHT || (y >= 0 && MAP[y][x] !== null))
+                return false
+        }
+    }
+    return true;
+}
+
+function gameover(){
+    clearInterval(LOOP_INTERVAL)
+    alert('GameOver');
+    // console.log(LOOP_INTERVAL)
+}
+
+function loop() {
+    if(CURRENT_SHAPE == null) {
+        let shape = SHAPES[Math.floor(Math.random() * SHAPES.length)];
+        CURRENT_SHAPE = build_shape(shape);
+        for(let item of CURRENT_SHAPE) {
+            SCREEN.appendChild(item.el);
+        }
+    } 
+    
+
+    if(can_move(0, 1))
+        move_current(0, 1);
+    else {
+        for(let item of CURRENT_SHAPE) {
+            if(item.y<0) {
+                clearInterval(LOOP_INTERVAL);
+                alert('Game Over');
+                break;
+            }   
+        }
+        for(let item of CURRENT_SHAPE) {
+            MAP[item.y][item.x] = item;
+        }
+
+        for(let y=HEIGHT-1;y>=0;y--) {
+            let all = true;
+            for(let x=0;x<WIDTH;x++)
+                if(MAP[y][x] === null)
+                    all = false;
+            if(all) {
+                SCORE += WIDTH;
+                for(let x=0;x<WIDTH;x++) {
+                    let el = MAP[y][x].el;
+                    el.style.opacity=0.0;
+                    el.style.background = 'white';
+                    el.style.borderColor = 'rgb(204, 204, 204)';
+                    setTimeout(function(){el.remove()}, 1000);
+                }
+                for(let y2=y;y2>1;y2--) {
+                    for(let x=0;x<WIDTH;x++) {
+                        MAP[y2][x] = MAP[y2-1][x];
+                        if(MAP[y2][x]) {
+                            MAP[y2][x].y += 1;
+                            MAP[y2][x].el.style.top = (MAP[y2][x].y * CELL_SIZE) + 'px';
+                        }
+                    }
+                }
+                for(let x=0;x<WIDTH;x++)
+                    MAP[0][x] = null;
+                y++;
+            }
+        }
+        CURRENT_SHAPE = null;
+    }
+}
+
+function onload() {
+    SCREEN = document.querySelector('#screen');
+    SCREEN.style.width = (WIDTH * CELL_SIZE) + 'px';
+    SCREEN.style.height = (HEIGHT * CELL_SIZE) + 'px';
+
+    MAP = [];
+    for(let y=0;y<HEIGHT;y++) {
+        let row = [];
+        for(let x=0;x<WIDTH;x++)
+            row.push(null)
+        MAP.push(row)
+    }
+
+    LOOP_INTERVAL = setInterval(loop, 500);
+
+    setInterval(function(){
+        if(SCORE > DISPLAY_SCORE) {
+            DISPLAY_SCORE += 1;
+            document.querySelector('#score').innerText = (''+DISPLAY_SCORE).padStart(6, '0');
+        }
+    }, 50);
+    // setInterval(function(){
+    //     console.log('>', el.style.top, parseInt(el.style.top.replace('px','')))
+    //     el.style.top = ((parseInt(el.style.top.replace('px','')) || 0) + CELL_SIZE) + 'px'
+    // }, 1000)
+}
+
+function update_display(){
+    for(let item of CURRENT_SHAPE) {
+        item.el.style.left = (item.x * CELL_SIZE) + 'px'
+        item.el.style.top = (item.y * CELL_SIZE) + 'px'
+    }
+}
+function move_current(dx, dy) {
+    for(let item of CURRENT_SHAPE) {
+        item.x += dx;
+        item.y += dy;
+    }
+    update_display();
+}
+
+function can_rotate(doit) {
+    let minx, maxx, miny, maxy;
+    for(let item of CURRENT_SHAPE){
+        if(minx === undefined || item.x < minx)minx=item.x;
+        if(maxx === undefined || item.x > maxx)maxx=item.x;
+        if(miny === undefined || item.y < miny)miny=item.y;
+        if(maxy === undefined || item.y > maxy)maxy=item.y;
+    }
+    // console.log('x:',minx, maxx, 'y:', miny, maxy);
+    let cx = (minx+maxx)/2, cy = (miny+maxy)/2;
+    // console.log(cx,cy);
+    cx = CURRENT_SHAPE[0].x < cx ? Math.ceil(cx) : Math.floor(cx);
+    cy = CURRENT_SHAPE[0].y < cy ? Math.ceil(cy) : Math.floor(cy);
+
+    // check 
+    for(let item of CURRENT_SHAPE) {
+        let ny = cy + (item.x-cx), nx = cx-(item.y-cy);
+        if(nx < 0 || nx >= WIDTH || ny >= HEIGHT || (ny >= 0 && MAP[ny][nx]))
+            return false;
+    }
+    // perform
+    for(let item of CURRENT_SHAPE) {
+        let ny = cy + (item.x-cx), nx = cx-(item.y-cy);
+        item.x = nx; item.y=ny;
+    }
+
+    update_display();
+    return true;
+}
+function keydown(event){
+    // console.log(event);
+
+    if(!CURRENT_SHAPE)
+        return;
+    if(event.key == 'ArrowRight' && can_move(1, 0))
+        move_current(1, 0);
+    if(event.key == 'ArrowLeft' && can_move(-1, 0))
+        move_current(-1, 0);
+    if(event.key == 'ArrowDown' && can_move(0, 1)) {
+        move_current(0, 1);
+        SCORE += 1;
+    }
+    if(event.code == 'Space' && can_move(0, 1)) {
+        let i=0;
+        while(can_move(0, i+1))
+            i+=1;
+        move_current(0, i);
+        SCORE += i;
+        loop();
+    }
+    if(event.code == 'ArrowUp') {
+        can_rotate()
+    }
+}
+</script>
+
+</body>
+</html>
