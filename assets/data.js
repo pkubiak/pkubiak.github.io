@@ -8,11 +8,12 @@ const SECTIONS = [
                 title: 'Frozen Fruits',
                 desc: 'Frozen Bubble clone with a lot of fruits!',
                 urls: {
-                    'play it': 'https://pkubiak.github.io/frozen-fruits/',
                     'github': 'https://github.com/pkubiak/frozen-fruits',
+                    'play it': 'https://pkubiak.github.io/frozen-fruits/',
                 },
             },
             {
+                img: 'https://github.com/pkubiak/gran-trak-2020/raw/master/screenshot.jpg',
                 title: 'Gran Trak 2020',
                 desc: 'Clone of classic Atari racing game Gran Trak 10.',
                 urls: {
@@ -116,6 +117,9 @@ const SECTIONS = [
             {
                 title: 'Advent Of Code 2020',
                 desc: '🎅 🎄 🎁 My solutions for the Advent of Code 2020',
+                urls: {
+                    github: "https://github.com/pkubiak/advent-of-code-2020",
+                }
             },
             {
                 img: 'https://user-images.githubusercontent.com/4224364/101270078-b312ff00-3775-11eb-9c29-f4d52beb4ed1.jpg',
@@ -142,6 +146,8 @@ const SECTIONS = [
                 }
             },
             {
+                img: 'https://github.com/pkubiak/hearty-playground/raw/master/mockup/Screenshot_2020-01-16_01-18-17.png',
+                desc: 'Interactive platform for web Technologies e-learning',
                 title: 'Hearty Playground',
                 urls: {
                     github: 'https://github.com/pkubiak/hearty-playground',
@@ -155,10 +161,27 @@ const SECTIONS = [
                 }
             },
             {
+                img: 'https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif',
                 title: "sh-presenter",
                 desc: "Tool for creating shell presentations",
                 urls: {
                     github: "https://github.com/pkubiak/sh-presenter",
+                }
+            },
+            {
+                img: "https://github.com/pkubiak/raytracer/raw/master/screenshots/snowflake-5.png",
+                title: "raytracer",
+                desc: "Raytracer implemented in c++",
+                urls: {
+                    github: "https://github.com/pkubiak/raytracer"
+                }
+            },
+            {
+                img: "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
+                title: "zettai",
+                desc: "",
+                urls: {
+                    github: "https://github.com/pkubiak/zettai"
                 }
             }
     
@@ -166,7 +189,7 @@ const SECTIONS = [
     },
     {
         name: 'Science',
-        desc: '',
+        desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         items: [
             {
                 title: 'Happy Szczurki',
@@ -181,6 +204,44 @@ const SECTIONS = [
                 urls: {
                     github: "https://github.com/pkubiak/gym-space-racer"
                 }
+            },
+            {
+                title: "kaggle-notebooks",
+                desc: "",
+                urls: {
+                    github: "https://github.com/pkubiak/kaggle-notebooks"
+                }
+            }
+        ]
+    },
+    {
+        name: "Hackathons",
+        desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        items: [
+            {
+                title: "droply",
+                desc: "",
+            },
+            {
+                img: "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
+                title: "BiteHack - Déjà vu",
+                desc: "",
+                urls: {
+                    github: "https://github.com/mkrzywda/BiteHack",
+                }
+            }]
+    },
+    {
+        name: "Private Project",
+        desc: "List of not yet released projects",
+        items: [
+            {
+                title: "spotiglot",
+                desc: "Organize you music collection by song language",
+            },
+            {
+                title: "gc-badger",
+                desc: "WIP: Project for monitoring geocaching projects and badges"
             }
         ]
     }
