@@ -154,6 +154,7 @@ const SECTIONS = [
                 }
             },
             {
+                img: "https://github.com/pkubiak/caves-kml/raw/master/screenshot.jpg",
                 title: "caves-kml",
                 desc: "Tool for dumping Jaskinie PGI database into KML/KMZ file suitable for offline browsing in Locus.",
                 urls: {
@@ -199,6 +200,7 @@ const SECTIONS = [
                 }
             },
             {
+                img: "https://raw.githubusercontent.com/pkubiak/gym-space-racer/master/screenshot.png",
                 title: "gym-space-racer ",
                 desc: "OpenAI gym environment for space ship racing on the futuristic track",
                 urls: {

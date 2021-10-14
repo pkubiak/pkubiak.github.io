@@ -12,7 +12,7 @@ function build_card(item) {
     el.innerHTML = `
         <div class="col">
             <div class="card">
-                <img src="${img_url}" class="card-img-top" alt="${item.title}">
+                <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background-image: url(${img_url})"></div>
                 <div class="card-body">
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text">${item.desc || ''}</p>
@@ -48,5 +48,5 @@ for(let section of SECTIONS) {
         </li>
     `;
 }
-main.classList.remove('d-none');
+
 nav.innerHTML += '<li class="nav-item"><a class="nav-link" href="https://github.com/pkubiak/">Github</a></li>';

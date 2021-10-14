@@ -11,37 +11,36 @@
     <title>Hello, world!</title>
 
     <style>
-    div.spinner-border {
-      display: none;
-      width: 3rem; height: 3rem;
-    }
-
-    main.d-none + div.spinner-border {
-      display: block;
-    }
+      .card-img-top {
+        background-size: cover;
+        background-position: center center;
+      }
+      #logo {
+        width: 300px; max-width: 100%
+      }
+      footer {
+        color: #999;
+      }
     </style>
   </head>
   <body>
     <div class="container p-4" style="max-width: 960px">
         <header class="text-center">
-            <img src="https://avatars.githubusercontent.com/u/4224364" style="width: 300px; max-width: 100%" alt="Profile Picture"/>
+            <img id="logo" src="https://avatars.githubusercontent.com/u/4224364" alt="Profile Picture"/>
             <h1>Paweł Kubiak</h1>
             <p class="lead mb-3">NLP Engineer at Samsung R&D Poland</p>
             
             <ul id="nav" class="nav justify-content-center mt-3"></ul>
         </header>
 
-        <div class="alert alert-warning mt-4" role="alert">
-            WARNING: Site under construction! 
+        <div class="alert alert-warning mt-4 text-center" role="alert">
+          🚧 🚧 🚧 🚧 🚧 🚧 🚧 Site under construction! 🚧 🚧 🚧 🚧 🚧 🚧 🚧
         </div>
 
         
-        <main class="p-3 d-none"></main>
-        <div class="spinner-border text-primary m-5 justify-content-center mx-auto" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
+        <main class="p-3"></main>
 
-        <footer class="text-center mt-5 fw-light" style="color:#999">by Paweł Kubiak 2021 with <a href="https://getbootstrap.com/docs/5.1/">bootstrap 5.1</a></footer>
+        <footer class="text-center mt-5 fw-light">by Paweł Kubiak 2021 with <a href="https://getbootstrap.com/docs/5.1/">bootstrap 5.1</a></footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
