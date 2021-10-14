@@ -48,5 +48,5 @@ for(let section of SECTIONS) {
         </li>
     `;
 }
-
+main.classList.remove('d-none');
 nav.innerHTML += '<li class="nav-item"><a class="nav-link" href="https://github.com/pkubiak/">Github</a></li>';
