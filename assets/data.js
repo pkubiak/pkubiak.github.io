@@ -217,7 +217,7 @@ const SECTIONS = [
             {
                 img: "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
                 title: "statsgrid",
-                desc: "",
+                desc: "Module for creating Grafana style metrics dashboards in python",
                 urls: {
                     github: "https://github.com/pkubiak/statsgrid"
                 }
@@ -254,12 +254,13 @@ const SECTIONS = [
                 desc: "WIP: Project for monitoring geocaching projects and badges"
             },
             {
-                title: "running-stones",
-                desc: ""
+                title: "CurlKB",
+                desc: "Raspberry-PI based device for curling training"
             },
             {
+                img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barthel_Fa.png",
                 title: "master-thesis",
-                desc: "Machine Learning approach to Rongorongo glyphs system decipherment"
+                desc: "WIP: Machine Learning approach to Rongorongo glyphs system decipherment"
             },
             {
                 title: "xwg-scanner",
