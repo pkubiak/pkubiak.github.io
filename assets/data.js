@@ -252,6 +252,17 @@ const SECTIONS = [
             {
                 title: "gc-badger",
                 desc: "WIP: Project for monitoring geocaching projects and badges"
+            },
+            {
+                title: "running-stones",
+                desc: ""
+            },
+            {
+                title: "master-thesis",
+                desc: "Machine Learning approach to Rongorongo glyphs system decipherment"
+            },
+            {
+                title: "xwg-scanner",
             }
         ]
     }
