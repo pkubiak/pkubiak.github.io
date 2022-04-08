@@ -213,6 +213,14 @@ const SECTIONS = [
                 urls: {
                     github: "https://github.com/pkubiak/kaggle-notebooks"
                 }
+            }, 
+            {
+                img: "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
+                title: "statsgrid",
+                desc: "",
+                urls: {
+                    github: "https://github.com/pkubiak/statsgrid"
+                }
             }
         ]
     },
