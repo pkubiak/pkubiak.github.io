@@ -31,7 +31,7 @@ const SECTIONS = [
                 },
             },
             {
-                img: "https://github.com/pkubiak/monster-o-brick/raw/master/screenshot.png",
+                img: "data/monster-o-brick.jpg",
                 title: 'Monster-o-Brick',
                 desc: 'Simple Post Apocalyptic themed arkanoid clone.',
                 urls: {
@@ -40,6 +40,7 @@ const SECTIONS = [
                 },
             },
             {
+                img: "data/swim-nemo-swim.jpg",
                 title: 'Swim Nemo Swim',
                 desc: 'Clone of classic pacman in underwater scenery.',
                 urls: {
@@ -48,6 +49,7 @@ const SECTIONS = [
                 },
             },
             {
+                img: 'data/tetris.jpg',
                 title: 'Tetris',
                 desc: 'Simple Clone of classic tetris.',
                 urls: {
@@ -115,6 +117,7 @@ const SECTIONS = [
         desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         items: [
             {
+                img: 'data/advent-of-code.jpg',
                 title: 'Advent Of Code 2020',
                 desc: '🎅 🎄 🎁 My solutions for the Advent of Code 2020',
                 urls: {
@@ -122,7 +125,7 @@ const SECTIONS = [
                 }
             },
             {
-                img: 'https://user-images.githubusercontent.com/4224364/101270078-b312ff00-3775-11eb-9c29-f4d52beb4ed1.jpg',
+                img: 'data/spotify-view.jpg',
                 title: 'Spotify View',
                 desc: 'Simple Spotify Artwork Visualization with nice gradient background',
                 urls: {
@@ -138,8 +141,9 @@ const SECTIONS = [
                 }
             },
             {
+                img: 'data/pylobot.jpg',
                 title: 'pylobot',
-                desc: "Javascript model viewer for Colobot Game",
+                desc: "Javascript 3D model viewer for Colobot Game",
                 urls: {
                     github: 'https://github.com/pkubiak/pylobot',
                     "live demo": "https://pkubiak.github.io/pylobot2/",
@@ -163,6 +167,7 @@ const SECTIONS = [
             },
             {
                 img: 'https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif',
+                img_position: 'center top',
                 title: "sh-presenter",
                 desc: "Tool for creating shell presentations",
                 urls: {
@@ -170,7 +175,7 @@ const SECTIONS = [
                 }
             },
             {
-                img: "https://github.com/pkubiak/raytracer/raw/master/screenshots/snowflake-5.png",
+                img: "data/raytracer.jpg",
                 title: "raytracer",
                 desc: "Raytracer implemented in c++",
                 urls: {
@@ -179,6 +184,7 @@ const SECTIONS = [
             },
             {
                 img: "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
+                img_position: 'center top',
                 title: "zettai",
                 desc: "",
                 urls: {
@@ -193,6 +199,7 @@ const SECTIONS = [
         desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         items: [
             {
+                img: "data/happy-szczurki.jpg",
                 title: 'Happy Szczurki',
                 desc: "🐀 Research on rats' ultrasonic vocalizations detection and classification",
                 urls: {
@@ -216,6 +223,7 @@ const SECTIONS = [
             }, 
             {
                 img: "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
+                img_position: 'left top',
                 title: "statsgrid",
                 desc: "Module for creating Grafana style metrics dashboards in python",
                 urls: {
@@ -234,6 +242,7 @@ const SECTIONS = [
             },
             {
                 img: "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
+                img_position: 'center top',
                 title: "BiteHack - Déjà vu",
                 desc: "",
                 urls: {
