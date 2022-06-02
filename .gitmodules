@@ -30,3 +30,6 @@
 	path = easter-dragon
 	url = https://github.com/pkubiak/easter-dragon.git
 	branch = master
+[submodule "angry-integrals"]
+	path = angry-integrals
+	url = https://github.com/pkubiak/angry-integrals.git
