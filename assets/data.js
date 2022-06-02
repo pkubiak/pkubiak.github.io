@@ -1,9 +1,8 @@
 const SECTIONS = [
     {
         name: 'Game Jams',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        desc: 'List of projects created/started during a few hours game jams. For fun, implemented mostly using JavaScript. All gamejams has been created using <a href="https://github.com/pkubiak/gamejam">GameJam Generator</a>',
         items: [
-            // TODO: Easter-dragon
             {
                 title: 'Frozen Fruits',
                 desc: 'Frozen Bubble clone with a lot of fruits!',
@@ -25,6 +24,7 @@ const SECTIONS = [
             {
                 img: 'https://github.com/pkubiak/guess-who/raw/master/screenshot.jpg',
                 title: 'Guess-Who',
+                desc: "TODO",
                 urls: {
                     'github': 'https://github.com/pkubiak/guess-who',
                     'play it': 'https://pkubiak.github.io/guess-who/',
@@ -58,6 +58,7 @@ const SECTIONS = [
             },
             {
                 img: 'https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png',
+                img_position: "top left",
                 title: 'Unicode Medness',
                 desc: 'Simple clone of Marble Maddness / Neverball ',
                 urls: {
@@ -67,15 +68,12 @@ const SECTIONS = [
                 },
             },
             {
+                img: 'data/angry-integrals.jpg',
                 title: 'Angry Integrals',
+                desc: 'TODO',
                 urls: {
                     'github': 'https://github.com/pkubiak/angry-integrals',
-                }
-            },
-            {
-                title: 'Nuclear Stalagmite',
-                urls: {
-                    'github': 'https://github.com/pkubiak/nuclear-stalagmite',
+                    'play it': 'https://pkubiak.github.io/angry-integrals/'
                 }
             },
             {
@@ -109,6 +107,14 @@ const SECTIONS = [
                     'github': 'https://github.com/pkubiak/pl.pycon.2020',
                     'youtube [PL]': 'https://www.youtube.com/watch?v=ExIc_Indhtg'
                 }
+            }, 
+            {
+                title: "Kill all the mutants!",
+                desc: "TODO"
+            },
+            {
+                title: "Jupyter: Tips & Tricks",
+                desc: "TODO"
             }
         ]
     },
@@ -130,14 +136,16 @@ const SECTIONS = [
                 desc: 'Simple Spotify Artwork Visualization with nice gradient background',
                 urls: {
                     github: 'https://github.com/pkubiak/spotify-view',
-                    'live demo': 'https://pkubiak.github.io/spotify/',
+                    'live demo': 'https://pkubiak.github.io/spotify/'
                 }
             },
             {
+                img: 'data/gamejam.png',
                 title: 'Gamejam',
                 desc: "Tool for generating randomized gamejam's ideas.",
                 urls: {
-                    'github': 'https://github.com/pkubiak/gamejam'
+                    'github': 'https://github.com/pkubiak/gamejam',
+                    'live via pyscript': 'https://pkubiak.github.io/gamejam/'
                 }
             },
             {
@@ -186,7 +194,7 @@ const SECTIONS = [
                 img: "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
                 img_position: 'center top',
                 title: "zettai",
-                desc: "",
+                desc: "TODO",
                 urls: {
                     github: "https://github.com/pkubiak/zettai"
                 }
@@ -216,7 +224,7 @@ const SECTIONS = [
             },
             {
                 title: "kaggle-notebooks",
-                desc: "",
+                desc: "TODO",
                 urls: {
                     github: "https://github.com/pkubiak/kaggle-notebooks"
                 }
@@ -238,13 +246,13 @@ const SECTIONS = [
         items: [
             {
                 title: "droply",
-                desc: "",
+                desc: "TODO",
             },
             {
                 img: "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
                 img_position: 'center top',
                 title: "BiteHack - Déjà vu",
-                desc: "",
+                desc: "TODO",
                 urls: {
                     github: "https://github.com/mkrzywda/BiteHack",
                 }
@@ -273,6 +281,7 @@ const SECTIONS = [
             },
             {
                 title: "xwg-scanner",
+                desc: "TODO"
             }
         ]
     }
