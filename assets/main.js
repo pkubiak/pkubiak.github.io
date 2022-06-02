@@ -9,10 +9,11 @@ function build_card(item) {
         links.push(`<a href="${item.urls[k]}" class="card-link">${k}</a>`)
 
     let img_url = item.img || ("https://picsum.photos/300/150?random="+Math.random());
+    let position = item.img_position || 'center center';
     el.innerHTML = `
         <div class="col">
             <div class="card">
-                <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background-image: url(${img_url})"></div>
+                <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background: url(${img_url}) ${position} / cover"></div>
                 <div class="card-body">
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text">${item.desc || ''}</p>
