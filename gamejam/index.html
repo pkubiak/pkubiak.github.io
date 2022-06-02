@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GameJam Generator</title>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - paths:
+          - https://raw.githubusercontent.com/pkubiak/gamejam/master/gamejam.py
+    </py-env>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>ul,dl{margin-bottom:0px}</style>
+  </head>
+  <body>
+    <main style="max-width:700px;margin:2rem auto">
+        <h1>🎮 GameJam Generator</h1>
+        <div class="input-group input-group-lg my-3">
+            <input type="text" class="form-control" placeholder="Random seed" id="seed">
+            <button class="btn btn-outline-secondary" type="button" id="button-generate">Generate 🎲</button>
+          </div>
+        <div class="card d-none" >
+            <div class="card-body" id="output"></div>
+        </div>
+    </main>
+    
+    <py-script>
+        # ref: https://stackoverflow.com/a/72244568/5822988
+        from js import document, FileReader
+        from pyodide import create_proxy
+        import gamejam
+
+        def generate(event):
+            seed_value = document.getElementById("seed").value
+            base_game, theme, mutations = gamejam.sample_game([gamejam.TODAY, seed_value])
+
+            html = f"""
+            [p class="lead" style="white-space: pre;"]{gamejam.__doc__.strip()}[/p][hr]
+            [dl class="row"]
+                [dt class="col-sm-3"]BASE GAME:[/dt]
+                [dd class="col-sm-9"]{base_game}[/dd]
+
+                [dt class="col-sm-3"]THEME:[/dt]
+                [dd class="col-sm-9"]{theme}[/dd]
+                [dt class="col-sm-3"]MUTATIONS:[/dt]
+                [dd class="col-sm-9"][ul]
+            """
+
+            for mutation in mutations:
+                html += f'[li]{mutation}[/li]'
+            
+            html += "[/ul][/dd][/dl]"
+
+            out = document.getElementById("output")
+            out.innerHTML = html.replace('[','<').replace(']','>')
+            out.parentElement.classList.remove('d-none')
+
+        el = document.getElementById("button-generate")
+        el.addEventListener("click", create_proxy(generate), False)
+    </py-script>
+  </body>
+</html>
