@@ -91,8 +91,11 @@ const SECTIONS = [
                     github: "https://github.com/pkubiak/easter-dragon",
                     "play it": "https://pkubiak.github.io/easter-dragon/"
                 }
+            },
+            {
+                title: "Spotillioners",
+                desc: "TODO"
             }
-    
         ]
     },
     {
