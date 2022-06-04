@@ -109,12 +109,16 @@ const SECTIONS = [
                 }
             }, 
             {
-                title: "Kill all the mutants!",
+                title: "Keep Calm and Kill all the mutants",
+                desc: "Short introduction to Mutation Testing in Python"
+            },
+            {
+                title: "Jupyter Notebook: Tips & Tricks",
                 desc: "TODO"
             },
             {
-                title: "Jupyter: Tips & Tricks",
-                desc: "TODO"
+                title: "Confidence intervals  and other tricks for beginners of <s>black magic</s> statistics",
+                dsc: "TODO"
             }
         ]
     },
@@ -177,7 +181,7 @@ const SECTIONS = [
                 img: 'https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif',
                 img_position: 'center top',
                 title: "sh-presenter",
-                desc: "Tool for creating shell presentations",
+                desc: "Tool for creating and recording shell presentations",
                 urls: {
                     github: "https://github.com/pkubiak/sh-presenter",
                 }
