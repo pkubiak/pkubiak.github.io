@@ -4,6 +4,7 @@ const SECTIONS = [
         desc: 'List of projects created/started during a few hours game jams. For fun, implemented mostly using JavaScript. All gamejams has been created using <a href="https://github.com/pkubiak/gamejam">GameJam Generator</a>',
         items: [
             {
+                img: "data/frozen-fruits.jpg",
                 title: 'Frozen Fruits',
                 desc: 'Frozen Bubble clone with a lot of fruits!',
                 urls: {
@@ -93,8 +94,9 @@ const SECTIONS = [
                 }
             },
             {
+                img: "data/spotillioners.jpg",
                 title: "Spotillioners",
-                desc: "TODO"
+                desc: "Music version of famous Millionairs game based on your spotify plays history."
             }
         ]
     },
@@ -284,11 +286,16 @@ const SECTIONS = [
             {
                 img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barthel_Fa.png",
                 title: "master-thesis",
-                desc: "WIP: Machine Learning approach to Rongorongo glyphs system decipherment"
+                desc: "WIP: Machine Learning approach to Rongorongo glyphs system decipherment."
             },
             {
                 title: "xwg-scanner",
                 desc: "TODO"
+            },
+            {
+                img: "data/caves-finder.jpg",
+                title: "caves-finder",
+                desc: "PoC: An attempt to algorithmically search for caves based on a Digital Elevation Model."
             }
         ]
     }
