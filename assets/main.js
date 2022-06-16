@@ -39,13 +39,22 @@ function build_section(section) {
     return wrapper;
 }
 
-const main = document.querySelector('main'), nav = document.querySelector('#nav');
 
-for(let section of SECTIONS) {
-    main.appendChild(build_section(section));
-    nav.innerHTML += `
-        <li class="nav-item">
-            <a class="nav-link" href="#${slugify(section.name)}">${section.name}</a>
-        </li>
-    `;
+function build_sections(){
+    const main = document.querySelector('main'), nav = document.querySelector('#nav');
+    fetch("assets/data.json")
+        .then((response) => response.json())
+        .then((sections) => {
+            for(let section of sections) {
+                main.appendChild(build_section(section));
+                nav.innerHTML += `
+                    <li class="nav-item">
+                        <a class="nav-link" href="#${slugify(section.name)}">${section.name}</a>
+                    </li>
+                `;
+            }
+        })
+
 }
+
+build_sections()
