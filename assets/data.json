@@ -58,8 +58,10 @@
                 }
             },
             {
-                "img": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
-                "img_position": "top left",
+                "img": {
+                    "url": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
+                    "position": "top left"
+                },
                 "title": "Unicode Medness",
                 "desc": "Simple clone of Marble Maddness / Neverball ",
                 "urls": {
@@ -182,8 +184,10 @@
                 }
             },
             {
-                "img": "https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif",
-                "img_position": "center top",
+                "img": {
+                    "url": "https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif",
+                    "position": "center top"
+                },
                 "title": "sh-presenter",
                 "desc": "Tool for creating and recording shell presentations",
                 "urls": {
@@ -199,8 +203,10 @@
                 }
             },
             {
-                "img": "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
-                "img_position": "center top",
+                "img": {
+                    "url": "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
+                    "position": "center top"
+                },
                 "title": "zettai",
                 "desc": "TODO",
                 "urls": {
@@ -237,8 +243,10 @@
                 }
             },
             {
-                "img": "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
-                "img_position": "left top",
+                "img": {
+                    "url": "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
+                    "position": "left top"
+                },
                 "title": "statsgrid",
                 "desc": "Module for creating Grafana style metrics dashboards in python",
                 "urls": {
@@ -256,8 +264,10 @@
                 "desc": "TODO"
             },
             {
-                "img": "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
-                "img_position": "center top",
+                "img": {
+                    "url": "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
+                    "position": "center top"
+                },
                 "title": "BiteHack - Déjà vu",
                 "desc": "TODO",
                 "urls": {
