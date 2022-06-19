@@ -1,0 +1,21 @@
+{
+  "name": "pkubiak.github.io",
+  "version": "1.0.0",
+  "description": "My portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-data": "ajv validate -s ./__tests__/data.schema.json -d assets/data.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkubiak/pkubiak.github.io.git"
+  },
+  "author": "Paweł Kubiak",
+  "bugs": {
+    "url": "https://github.com/pkubiak/pkubiak.github.io/issues"
+  },
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
+  }
+}
