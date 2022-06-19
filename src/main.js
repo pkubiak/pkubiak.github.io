@@ -4,12 +4,12 @@ function slugify(name) {
 
 function build_card(item) {
     let el = document.createElement('div'); el.className = 'col';
-    let links = [];
-    for(let k in item.urls)
-        links.push(`<a href="${item.urls[k]}" class="card-link">${k}</a>`)
+    let links = Object.entries(item.urls || {}).map(link => `<a href="${link[1]}" class="card-link">${link[0]}</a>`)
 
-    let img_url = item.img || ("https://picsum.photos/300/150?random="+Math.random());
-    let position = item.img_position || 'center center';
+    let img = (typeof(item.img) === "string") ? {url: item.img} : (item.img || {});
+
+    let img_url = img.url || ("https://picsum.photos/300/150?random="+Math.random());
+    let position = img.position || 'center center';
     el.innerHTML = `
         <div class="col">
             <div class="card">
@@ -41,7 +41,7 @@ function build_section(section) {
 
 function build_sections(){
     const main = document.querySelector('main'), nav = document.querySelector('#nav');
-    fetch("assets/data.json")
+    fetch("src/data.json")
         .then((response) => response.json())
         .then((sections) => {
             for(let section of sections) {
