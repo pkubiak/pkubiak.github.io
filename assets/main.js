@@ -39,7 +39,6 @@ function build_section(section) {
     return wrapper;
 }
 
-
 function build_sections(){
     const main = document.querySelector('main'), nav = document.querySelector('#nav');
     fetch("assets/data.json")
@@ -56,5 +55,3 @@ function build_sections(){
         })
 
 }
-
-build_sections()
