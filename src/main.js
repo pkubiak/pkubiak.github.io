@@ -11,14 +11,12 @@ function build_card(item) {
     let img_url = img.url || ("https://picsum.photos/300/150?random="+Math.random());
     let position = img.position || 'center center';
     el.innerHTML = `
-        <div class="col">
-            <div class="card">
-                <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background: url(${img_url}) ${position} / cover"></div>
-                <div class="card-body">
-                    <h5 class="card-title">${item.title}</h5>
-                    <p class="card-text">${item.desc || ''}</p>
-                    ${links.join("\n")}
-                </div>
+        <div class="card">
+            <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background: url(${img_url}) ${position} / cover"></div>
+            <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text">${item.desc || ''}</p>
+                ${links.join("\n")}
             </div>
         </div>
     `;
