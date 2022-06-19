@@ -1,0 +1,68 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "desc": {
+                "type": "string"
+            },
+            "items": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "img": {
+                            "anyOf": [
+                                {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "position": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "desc": {
+                            "type": "string"
+                        },
+                        "urls": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "title",
+                        "desc"
+                    ]
+                }
+            }
+        },
+        "additionalProperties": false,
+        "required": [
+            "name",
+            "desc",
+            "items"
+        ]
+    }
+}
