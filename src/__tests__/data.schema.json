@@ -65,7 +65,6 @@
         "additionalProperties": false,
         "required": [
             "name",
-            "desc",
             "items"
         ]
     }

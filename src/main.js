@@ -42,8 +42,9 @@ function build_section(section) {
     let wrapper = document.createElement('div');
 
     let slug = slugify(section.name);
-    wrapper.innerHTML += `<h2 id="${slug}" class="mt-5">${section.name}</h2>`;
-    wrapper.innerHTML += `<p class="lead mt-3 mb-4">${section.desc}</p>`;
+    wrapper.innerHTML += `<h2 id="${slug}" class="mt-5 mb-3">${section.name}</h2>`;
+    if(section.desc)
+        wrapper.innerHTML += `<p class="lead mt-3 mb-4">${section.desc}</p>`;
     let cards = document.createElement('div');
     cards.className = 'row row-cols-1 row-cols-sm-2 row-cols-md-3  g-4';
     for(let item of section.items)
