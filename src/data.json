@@ -1,7 +1,7 @@
 [
     {
         "name": "Game Jams",
-        "desc": "List of projects created/started during a few hours game jams. For fun, implemented mostly using JavaScript. All gamejams has been created using <a href=\"https://github.com/pkubiak/gamejam\">GameJam Generator</a>",
+        "desc": "List of projects created/started during a few hours game jams. For fun, implemented mostly using JavaScript. Most of gamejams has been created using <a href=\"https://github.com/pkubiak/gamejam\">GameJam Generator</a>.",
         "items": [
             {
                 "img": "data/frozen-fruits.jpg",
@@ -13,6 +13,19 @@
                 }
             },
             {
+                "img": {
+                    "url": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
+                    "position": "top left"
+                },
+                "title": "Unicode Medness",
+                "desc": "Simple clone of Marble Maddness / Neverball.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/unicode-madness",
+                    "play it": "https://pkubiak.github.io/unicode-madness/",
+                    "more levels": "https://github.com/pkubiak/unicode-madness#levels"
+                }
+            },
+            {
                 "img": "https://github.com/pkubiak/gran-trak-2020/raw/master/screenshot.jpg",
                 "title": "Gran Trak 2020",
                 "desc": "Clone of classic Atari racing game Gran Trak 10.",
@@ -20,6 +33,15 @@
                     "github": "https://github.com/pkubiak/gran-trak-2020",
                     "play it": "https://pkubiak.github.io/gran-trak-2020/",
                     "play with cpu": "https://pkubiak.github.io/gran-trak-2020/#cpu"
+                }
+            },
+            {
+                "img": "data/sh-dungeon.webp",
+                "title": "sh-dungeon",
+                "desc": "Old school 8bit, Pure python dungeon crawler in terminal using self-made RayTracing engine.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/sh-dungeon",
+                    "gameplay (YouTube)": "https://youtu.be/wZLqNSs_UIY"
                 }
             },
             {
@@ -58,32 +80,12 @@
                 }
             },
             {
-                "img": {
-                    "url": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
-                    "position": "top left"
-                },
-                "title": "Unicode Medness",
-                "desc": "Simple clone of Marble Maddness / Neverball.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/unicode-madness",
-                    "play it": "https://pkubiak.github.io/unicode-madness/",
-                    "more levels": "https://github.com/pkubiak/unicode-madness#levels"
-                }
-            },
-            {
                 "img": "data/angry-integrals.jpg",
                 "title": "Angry Integrals",
                 "desc": "Memory-like game involving solving integrals.",
                 "urls": {
                     "github": "https://github.com/pkubiak/angry-integrals",
                     "play it": "https://pkubiak.github.io/angry-integrals/"
-                }
-            },
-            {
-                "title": "sh-dungeon",
-                "desc": "Simple dungeon crawler in terminal using RayTracing engine.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/sh-dungeon"
                 }
             },
             {
@@ -104,7 +106,7 @@
     },
     {
         "name": "Presentations",
-        "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "desc": "Presentations prepared for various types of speeches:",
         "items": [
             {
                 "img": "https://camo.githubusercontent.com/1fede4c68d884860658b815f78e8a8c92d95ad8d642ecacde6b6665d9fff552f/687474703a2f2f69332e7974696d672e636f6d2f76692f457849635f496e646874672f6d617872657364656661756c742e6a7067",
@@ -131,7 +133,6 @@
     },
     {
         "name": "Other Stuff",
-        "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         "items": [
             {
                 "img": "data/advent-of-code.jpg",
@@ -172,16 +173,21 @@
                 "img": "https://github.com/pkubiak/hearty-playground/raw/master/mockup/Screenshot_2020-01-16_01-18-17.png",
                 "desc": "Interactive platform for web Technologies e-learning.",
                 "title": "Hearty Playground",
+                "details": "<b>Backend:</b> python, Django<br><b>Frontend:</b> bootstrap<br><b>Deployment:</b> Heroku, AWS S3",
                 "urls": {
-                    "github": "https://github.com/pkubiak/hearty-playground"
+                    "github": "https://github.com/pkubiak/hearty-playground",
+                    "live demo": "https://hearty-playground.herokuapp.com/",
+                    "demo video": "https://www.youtube.com/watch?v=xE4JCkFqSBg"
                 }
             },
             {
                 "img": "https://github.com/pkubiak/caves-kml/raw/master/screenshot.jpg",
                 "title": "caves-kml",
-                "desc": "Tool for dumping Jaskinie PGI database into KML/KMZ file suitable for offline browsing in Locus.",
+                "desc": "Tool for dumping Jaskinie PGI database into KML/KMZ file suitable for offline browsing in Locus Maps.",
+                "details": "python, web scraping",
                 "urls": {
-                    "github": "https://github.com/pkubiak/caves-kml"
+                    "github": "https://github.com/pkubiak/caves-kml",
+                    "releases": "https://github.com/pkubiak/caves-kml/releases"
                 }
             },
             {
@@ -210,6 +216,7 @@
                 },
                 "title": "zettai",
                 "desc": "Tool for creating user defined PoIs collections.",
+                "details": "<b>tools:</b> php, leaflet",
                 "urls": {
                     "github": "https://github.com/pkubiak/zettai"
                 }
@@ -218,7 +225,7 @@
     },
     {
         "name": "Science",
-        "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "desc": "Machine Learning / Reasearch related project:",
         "items": [
             {
                 "img": "data/happy-szczurki.jpg",
@@ -264,18 +271,21 @@
     },
     {
         "name": "Hackathons",
-        "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "desc": "Crazy projects created in teams during Hackathons:",
         "items": [
             {
+                "img": "data/droply.webp",
                 "title": "HackYeah - droply",
-                "desc": "An idea for a device which, mounted on the tap, counts every drop of water used.",
-                "details": "<b>Hardware:</b> Micro:bit<br><b>Software:</b> flask"
+                "desc": "An idea for an inteligent tap which, counts every drop of water used.",
+                "details": "<b>Hardware:</b> Micro:bit<br><b>Frontend:</b> flask, bootstrap<br><b>Backend (API):</b> node.js, fastify",
+                "urls": {
+                    "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
+                    "pitch": "https://docs.google.com/presentation/d/1RQgFw0VjkjtlAEVrKRk0sKjNEqWIWiqVj7G3RGLJmcI/edit?usp=sharing",
+                    "photos": "https://photos.app.goo.gl/8JCvscM9TJg6aSY69"
+                }
             },
             {
-                "img": {
-                    "url": "https://github.com/mkrzywda/BiteHack/raw/master/screenshot.jpg",
-                    "position": "center top"
-                },
+                "img": "data/dejavu.jpg",
                 "title": "BiteHack - Déjà vu",
                 "desc": "An idea for a search engine that will recognise a film based on any remembered detail.",
                 "details": "python, elasticsearch, OpenData",
@@ -287,7 +297,7 @@
     },
     {
         "name": "Private Project",
-        "desc": "List of not yet released projects",
+        "desc": "List of not yet released projects:",
         "items": [
             {
                 "title": "spotiglot",
@@ -298,6 +308,7 @@
                 "desc": "WIP: Project for monitoring geocaching projects and badges."
             },
             {
+                "img": "data/curlkb.jpg",
                 "title": "CurlKB",
                 "desc": "Raspberry-PI based device for curling training.",
                 "details": "<b>Hardware:</b> RaspberryPi<br><b>Software:</b> Flask"
