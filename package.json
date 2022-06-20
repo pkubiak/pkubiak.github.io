@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check-data": "ajv validate -s ./src/__tests__/data.schema.json -d src/data.json"
+    "check-data": "ajv validate --errors=js --strict --all-errors --verbose -s ./src/__tests__/data.schema.json -d src/data.json "
   },
   "repository": {
     "type": "git",

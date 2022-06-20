@@ -25,7 +25,7 @@
             {
                 "img": "https://github.com/pkubiak/guess-who/raw/master/screenshot.jpg",
                 "title": "Guess-Who",
-                "desc": "TODO",
+                "desc": "Online multiplayer clone of Guess-Who game with multiple tile sets!",
                 "urls": {
                     "github": "https://github.com/pkubiak/guess-who",
                     "play it": "https://pkubiak.github.io/guess-who/"
@@ -63,7 +63,7 @@
                     "position": "top left"
                 },
                 "title": "Unicode Medness",
-                "desc": "Simple clone of Marble Maddness / Neverball ",
+                "desc": "Simple clone of Marble Maddness / Neverball.",
                 "urls": {
                     "github": "https://github.com/pkubiak/unicode-madness",
                     "play it": "https://pkubiak.github.io/unicode-madness/",
@@ -73,7 +73,7 @@
             {
                 "img": "data/angry-integrals.jpg",
                 "title": "Angry Integrals",
-                "desc": "TODO",
+                "desc": "Memory-like game involving solving integrals.",
                 "urls": {
                     "github": "https://github.com/pkubiak/angry-integrals",
                     "play it": "https://pkubiak.github.io/angry-integrals/"
@@ -81,14 +81,14 @@
             },
             {
                 "title": "sh-dungeon",
-                "desc": "Simple dungeon crawler in terminal using RayTracing engine",
+                "desc": "Simple dungeon crawler in terminal using RayTracing engine.",
                 "urls": {
                     "github": "https://github.com/pkubiak/sh-dungeon"
                 }
             },
             {
                 "title": "Easter Dragon",
-                "desc": "Easter themed javascript clone of classic flappy-bird",
+                "desc": "Easter themed javascript clone of classic flappy-bird.",
                 "urls": {
                     "github": "https://github.com/pkubiak/easter-dragon",
                     "play it": "https://pkubiak.github.io/easter-dragon/"
@@ -97,7 +97,8 @@
             {
                 "img": "data/spotillioners.jpg",
                 "title": "Spotillioners",
-                "desc": "Music version of famous Millionairs game based on your spotify plays history."
+                "desc": "Music version of famous Millionairs game based on your spotify plays history.",
+                "details": "<b>tools:</b> JavaScript, bootstrap, SpotifyAPI"
             }
         ]
     },
@@ -116,15 +117,15 @@
             },
             {
                 "title": "Keep Calm and Kill all the mutants",
-                "desc": "Short introduction to Mutation Testing in Python"
+                "desc": "Short introduction to Mutation Testing in Python."
             },
             {
                 "title": "Jupyter Notebook: Tips & Tricks",
-                "desc": "TODO"
+                "desc": "Presentation of very useful but often unknown Jupyter functions."
             },
             {
-                "title": "Confidence intervals  and other tricks for beginners of <s>black magic</s> statistics",
-                "desc": "TODO"
+                "title": "Confidence intervals and other tricks for beginners of <s>black magic</s> statistics",
+                "desc": "Confidence intervals, whys & hows to use them in python."
             }
         ]
     },
@@ -135,7 +136,7 @@
             {
                 "img": "data/advent-of-code.jpg",
                 "title": "Advent Of Code 2020",
-                "desc": "🎅 🎄 🎁 My solutions for the Advent of Code 2020",
+                "desc": "🎅 🎄 🎁 My solutions for the Advent of Code 2020-2021.",
                 "urls": {
                     "github": "https://github.com/pkubiak/advent-of-code-2020"
                 }
@@ -143,7 +144,7 @@
             {
                 "img": "data/spotify-view.jpg",
                 "title": "Spotify View",
-                "desc": "Simple Spotify Artwork Visualization with nice gradient background",
+                "desc": "Simple Spotify Artwork Visualization with nice gradient background.",
                 "urls": {
                     "github": "https://github.com/pkubiak/spotify-view",
                     "live demo": "https://pkubiak.github.io/spotify/"
@@ -161,7 +162,7 @@
             {
                 "img": "data/pylobot.jpg",
                 "title": "pylobot",
-                "desc": "Javascript 3D model viewer for Colobot Game",
+                "desc": "Javascript 3D model viewer for Colobot Game.",
                 "urls": {
                     "github": "https://github.com/pkubiak/pylobot",
                     "live demo": "https://pkubiak.github.io/pylobot2/"
@@ -169,7 +170,7 @@
             },
             {
                 "img": "https://github.com/pkubiak/hearty-playground/raw/master/mockup/Screenshot_2020-01-16_01-18-17.png",
-                "desc": "Interactive platform for web Technologies e-learning",
+                "desc": "Interactive platform for web Technologies e-learning.",
                 "title": "Hearty Playground",
                 "urls": {
                     "github": "https://github.com/pkubiak/hearty-playground"
@@ -189,7 +190,7 @@
                     "position": "center top"
                 },
                 "title": "sh-presenter",
-                "desc": "Tool for creating and recording shell presentations",
+                "desc": "Tool for creating and recording shell presentations.",
                 "urls": {
                     "github": "https://github.com/pkubiak/sh-presenter"
                 }
@@ -197,7 +198,7 @@
             {
                 "img": "data/raytracer.jpg",
                 "title": "raytracer",
-                "desc": "Raytracer implemented in c++",
+                "desc": "Raytracer implemented in c++.",
                 "urls": {
                     "github": "https://github.com/pkubiak/raytracer"
                 }
@@ -208,7 +209,7 @@
                     "position": "center top"
                 },
                 "title": "zettai",
-                "desc": "TODO",
+                "desc": "Tool for creating user defined PoIs collections.",
                 "urls": {
                     "github": "https://github.com/pkubiak/zettai"
                 }
@@ -222,7 +223,7 @@
             {
                 "img": "data/happy-szczurki.jpg",
                 "title": "Happy Szczurki",
-                "desc": "🐀 Research on rats' ultrasonic vocalizations detection and classification",
+                "desc": "🐀 Research on rats' ultrasonic vocalizations detection and classification.",
                 "urls": {
                     "github": "https://github.com/pkubiak/happy-szczurki"
                 }
@@ -230,28 +231,34 @@
             {
                 "img": "https://raw.githubusercontent.com/pkubiak/gym-space-racer/master/screenshot.png",
                 "title": "gym-space-racer ",
-                "desc": "OpenAI gym environment for space ship racing on the futuristic track",
+                "desc": "OpenAI gym environment for space ship racing on the futuristic track.",
                 "urls": {
                     "github": "https://github.com/pkubiak/gym-space-racer"
                 }
             },
             {
                 "title": "kaggle-notebooks",
-                "desc": "TODO",
+                "desc": "List of Jupyter Notebooks prepared for different Kaggle's competitions.",
                 "urls": {
                     "github": "https://github.com/pkubiak/kaggle-notebooks"
                 }
             },
             {
                 "img": {
-                    "url": "https://github.com/pkubiak/statsgrid/raw/main/misc/preview.jpg",
+                    "url": "data/statsgrid.jpg",
                     "position": "left top"
                 },
                 "title": "statsgrid",
-                "desc": "Module for creating Grafana style metrics dashboards in python",
+                "desc": "Module for creating Grafana style metrics dashboards in python.",
+                "details": "<b>tools:</b> python, pytest (testing)",
                 "urls": {
-                    "github": "https://github.com/pkubiak/statsgrid"
+                    "github": "https://github.com/pkubiak/statsgrid",
+                    "demo (binder)": "https://mybinder.org/v2/gh/pkubiak/statsgrid/HEAD?labpath=examples%2Fdemo.ipynb"
                 }
+            },
+            {
+                "title": "confluence-notebook",
+                "desc": "Tool for easy inserting Jupyter Notebooks into Confluence pages."
             }
         ]
     },
@@ -260,8 +267,9 @@
         "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         "items": [
             {
-                "title": "droply",
-                "desc": "TODO"
+                "title": "HackYeah - droply",
+                "desc": "An idea for a device which, mounted on the tap, counts every drop of water used.",
+                "details": "<b>Hardware:</b> Micro:bit<br><b>Software:</b> flask"
             },
             {
                 "img": {
@@ -269,7 +277,8 @@
                     "position": "center top"
                 },
                 "title": "BiteHack - Déjà vu",
-                "desc": "TODO",
+                "desc": "An idea for a search engine that will recognise a film based on any remembered detail.",
+                "details": "python, elasticsearch, OpenData",
                 "urls": {
                     "github": "https://github.com/mkrzywda/BiteHack"
                 }
@@ -282,15 +291,15 @@
         "items": [
             {
                 "title": "spotiglot",
-                "desc": "Organize you music collection by song language"
+                "desc": "Script for organizing you music collection by song language."
             },
             {
                 "title": "gc-badger",
-                "desc": "WIP: Project for monitoring geocaching projects and badges"
+                "desc": "WIP: Project for monitoring geocaching projects and badges."
             },
             {
                 "title": "CurlKB",
-                "desc": "Raspberry-PI based device for curling training",
+                "desc": "Raspberry-PI based device for curling training.",
                 "details": "<b>Hardware:</b> RaspberryPi<br><b>Software:</b> Flask"
             },
             {
@@ -300,7 +309,8 @@
             },
             {
                 "title": "xwg-scanner",
-                "desc": "TODO"
+                "desc": "PoC: Tool for automatic recogniton of xWG wood coins.",
+                "details": "python, pillow, text recogniton"
             },
             {
                 "img": "data/caves-finder.jpg",

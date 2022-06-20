@@ -39,7 +39,8 @@
                             "type": "string"
                         },
                         "desc": {
-                            "type": "string"
+                            "type": "string",
+                            "pattern": "^.*[!?.]$"
                         },
                         "urls": {
                             "type": "object",
