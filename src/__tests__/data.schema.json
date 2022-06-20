@@ -48,6 +48,9 @@
                                     "type": "string"
                                 }
                             }
+                        },
+                        "details": {
+                            "type": "string"
                         }
                     },
                     "additionalProperties": false,

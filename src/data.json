@@ -290,7 +290,8 @@
             },
             {
                 "title": "CurlKB",
-                "desc": "Raspberry-PI based device for curling training"
+                "desc": "Raspberry-PI based device for curling training",
+                "details": "<b>Hardware:</b> RaspberryPi<br><b>Software:</b> Flask"
             },
             {
                 "img": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barthel_Fa.png",

@@ -2,6 +2,7 @@ function slugify(name) {
     return name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/[-]+/g, '-');
 }
 
+//<a type="button" tabindex="0" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" title="<b>tools:</b> Python, matplotlib<br>Tooltip on top">ⓘ</a>
 function build_card(item) {
     let el = document.createElement('div'); el.className = 'col';
     let links = Object.entries(item.urls || {}).map(link => `<a href="${link[1]}" class="card-link">${link[0]}</a>`)
@@ -20,6 +21,21 @@ function build_card(item) {
             </div>
         </div>
     `;
+
+    if(typeof(item.details) === "string") {
+        const tooltip = document.createElement('span');
+        tooltip.className = 'btn-tooltip';
+        tooltip.tabIndex = 0;
+        el.querySelector('h5').appendChild(tooltip);
+
+        new bootstrap.Tooltip(
+            el.querySelector('span'),
+            {
+                title: item.details,
+                html: true
+            }
+        )
+    }
     return el;
 }
 
@@ -51,5 +67,4 @@ function build_sections(){
                 `;
             }
         })
-
 }
