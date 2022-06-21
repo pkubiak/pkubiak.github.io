@@ -89,6 +89,7 @@
                 }
             },
             {
+                "img": "data/easter-dragon.jpg",
                 "title": "Easter Dragon",
                 "desc": "Easter themed javascript clone of classic flappy-bird.",
                 "urls": {
@@ -118,14 +119,17 @@
                 }
             },
             {
+                "img": "data/kill-all-the-mutants.jpg",
                 "title": "Keep Calm and Kill all the mutants",
                 "desc": "Short introduction to Mutation Testing in Python."
             },
             {
+                "img": "data/jupyter-tips-and-tricks.jpg",
                 "title": "Jupyter Notebook: Tips & Tricks",
                 "desc": "Presentation of very useful but often unknown Jupyter functions."
             },
             {
+                "img": "data/confidence-intervals.jpg",
                 "title": "Confidence intervals and other tricks for beginners of <s>black magic</s> statistics",
                 "desc": "Confidence intervals, whys & hows to use them in python."
             }
@@ -170,7 +174,7 @@
                 }
             },
             {
-                "img": "https://github.com/pkubiak/hearty-playground/raw/master/mockup/Screenshot_2020-01-16_01-18-17.png",
+                "img": "data/hearty-playground.jpg",
                 "desc": "Interactive platform for web Technologies e-learning.",
                 "title": "Hearty Playground",
                 "details": "<b>Backend:</b> python, Django<br><b>Frontend:</b> bootstrap<br><b>Deployment:</b> Heroku, AWS S3",
@@ -240,10 +244,12 @@
                 "title": "gym-space-racer ",
                 "desc": "OpenAI gym environment for space ship racing on the futuristic track.",
                 "urls": {
-                    "github": "https://github.com/pkubiak/gym-space-racer"
+                    "github": "https://github.com/pkubiak/gym-space-racer",
+                    "sample model (YT)": "https://www.youtube.com/shorts/3qwlICQNqgo"
                 }
             },
             {
+                "img": "data/kaggle-notebooks.jpg",
                 "title": "kaggle-notebooks",
                 "desc": "List of Jupyter Notebooks prepared for different Kaggle's competitions.",
                 "urls": {
@@ -304,8 +310,10 @@
                 "desc": "Script for organizing you music collection by song language."
             },
             {
+                "img": "data/gc-badger.jpg",
                 "title": "gc-badger",
-                "desc": "WIP: Project for monitoring geocaching projects and badges."
+                "desc": "Project for monitoring geocaching projects and badges.",
+                "details": "python, flask, pycaching"
             },
             {
                 "img": "data/curlkb.jpg",
