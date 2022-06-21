@@ -17,8 +17,8 @@
                     "url": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
                     "position": "top left"
                 },
-                "title": "Unicode Medness",
-                "desc": "Simple clone of Marble Maddness / Neverball.",
+                "title": "Unicode Madness",
+                "desc": "Simple clone of Marble Madness / Neverball.",
                 "urls": {
                     "github": "https://github.com/pkubiak/unicode-madness",
                     "play it": "https://pkubiak.github.io/unicode-madness/",
@@ -56,7 +56,7 @@
             {
                 "img": "data/monster-o-brick.jpg",
                 "title": "Monster-o-Brick",
-                "desc": "Simple Post Apocalyptic themed arkanoid clone.",
+                "desc": "Simple Post Apocalyptic themed Arkanoid clone.",
                 "urls": {
                     "github": "https://github.com/pkubiak/monster-o-brick",
                     "play it": "https://pkubiak.github.io/monster-o-brick/"
@@ -65,7 +65,7 @@
             {
                 "img": "data/swim-nemo-swim.jpg",
                 "title": "Swim Nemo Swim",
-                "desc": "Clone of classic pacman in underwater scenery.",
+                "desc": "Clone of classic Pacman in underwater scenery.",
                 "urls": {
                     "github": "https://github.com/pkubiak/swim-nemo-swim",
                     "play it": "https://pkubiak.github.io/swim-nemo-swim/"
@@ -74,7 +74,7 @@
             {
                 "img": "data/tetris.jpg",
                 "title": "Tetris",
-                "desc": "Simple Clone of classic tetris.",
+                "desc": "Simple Clone of classic Tetris.",
                 "urls": {
                     "play it": "https://pkubiak.github.io/tetris/"
                 }
@@ -100,7 +100,7 @@
             {
                 "img": "data/spotillioners.jpg",
                 "title": "Spotillioners",
-                "desc": "Music version of famous Millionairs game based on your spotify plays history.",
+                "desc": "Music version of famous Millionaires game based on your spotify plays history.",
                 "details": "<b>tools:</b> JavaScript, bootstrap, SpotifyAPI"
             }
         ]
@@ -157,7 +157,7 @@
             },
             {
                 "img": "data/gamejam.png",
-                "title": "Gamejam",
+                "title": "Gamejam Generator",
                 "desc": "Tool for generating randomized gamejam's ideas.",
                 "urls": {
                     "github": "https://github.com/pkubiak/gamejam",
@@ -229,7 +229,7 @@
     },
     {
         "name": "Science",
-        "desc": "Machine Learning / Reasearch related project:",
+        "desc": "Machine Learning / Research related project:",
         "items": [
             {
                 "img": "data/happy-szczurki.jpg",
@@ -282,7 +282,7 @@
             {
                 "img": "data/droply.webp",
                 "title": "HackYeah - droply",
-                "desc": "An idea for an inteligent tap which, counts every drop of water used.",
+                "desc": "An idea for an intelligent tap which, counts every drop of water used.",
                 "details": "<b>Hardware:</b> Micro:bit<br><b>Frontend:</b> flask, bootstrap<br><b>Backend (API):</b> node.js, fastify",
                 "urls": {
                     "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
@@ -293,7 +293,7 @@
             {
                 "img": "data/dejavu.jpg",
                 "title": "BiteHack - Déjà vu",
-                "desc": "An idea for a search engine that will recognise a film based on any remembered detail.",
+                "desc": "An idea for a search engine that will recognize a film based on any remembered detail.",
                 "details": "python, elasticsearch, OpenData",
                 "urls": {
                     "github": "https://github.com/mkrzywda/BiteHack"
@@ -302,7 +302,7 @@
         ]
     },
     {
-        "name": "Private Project",
+        "name": "Private Projects",
         "desc": "List of not yet released projects:",
         "items": [
             {
@@ -324,12 +324,12 @@
             {
                 "img": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barthel_Fa.png",
                 "title": "master-thesis",
-                "desc": "WIP: Machine Learning approach to Rongorongo glyphs system decipherment."
+                "desc": "WIP: Machine Learning approach to <a href=\"https://en.wikipedia.org/wiki/Rongorongo\">Rongorongo</a> glyphs system decipherment."
             },
             {
                 "title": "xwg-scanner",
-                "desc": "PoC: Tool for automatic recogniton of xWG wood coins.",
-                "details": "python, pillow, text recogniton"
+                "desc": "PoC: Tool for automatic recognition of xWG wood coins.",
+                "details": "python, pillow, text recognition"
             },
             {
                 "img": "data/caves-finder.jpg",
