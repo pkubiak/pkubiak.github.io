@@ -132,6 +132,15 @@
                 "img": "data/confidence-intervals.jpg",
                 "title": "Confidence intervals and other tricks for beginners of <s>black magic</s> statistics",
                 "desc": "Confidence intervals, whys & hows to use them in python."
+            },
+            {
+                "img": "data/emoji-day-2022.png",
+                "title": "Emoji Day 2022",
+                "desc": "Coding Hackathon organized to celebrate Emoji Day 2022.",
+                "urls": {
+                    "Google Slides": "https://docs.google.com/presentation/d/1rW1hRaCaPh3PTQFc9xAikLvrCkCbnKnHuLSsCsDyQDw/edit?usp=sharing"
+                },
+                "details": "<b>keywords:</b> streamlit, twitter, emoji, data science, python"
             }
         ]
     },
