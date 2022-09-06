@@ -121,7 +121,11 @@
             {
                 "img": "data/kill-all-the-mutants.jpg",
                 "title": "Keep Calm and Kill all the mutants",
-                "desc": "Short introduction to Mutation Testing in Python."
+                "desc": "Short introduction to Mutation Testing in Python.",
+                "details": "<b>keywords:</b> testing, mutpy, ast parsing",
+                "urls": {
+                    "Slides [pptx]": "https://github.com/pkubiak/slides/raw/main/keep-calm-and-kill-all-the-mutants/Keep%20Calm%20and%20Kill%20all%20the%20mutants.pptx"
+                }
             },
             {
                 "img": "data/jupyter-tips-and-tricks.jpg",
