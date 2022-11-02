@@ -4,28 +4,35 @@ function slugify(name) {
 
 function build_card(item) {
     let el = document.createElement('div'); el.className = 'col';
-    let links = Object.entries(item.urls || {}).map(link => `<a href="${link[1]}" class="card-link" target="_blank">${link[0]}</a>`)
-
-    let img = (typeof(item.img) === "string") ? {url: item.img} : (item.img || {});
+    const links = Object.entries(item.urls || {}).map(link => `<li class="list-inline-item"><a href="${link[1]}" class="card-link" target="_blank">${link[0]}</a></li>`)
+    const links_ul = links ? `<ul class="list-inline mb-0">${links.join("\n")}</ul>` : '';
+    const img = (typeof(item.img) === "string") ? {url: item.img} : (item.img || {});
 
     let img_url = img.url || ("https://picsum.photos/300/150?random="+Math.random());
     let position = img.position || 'center center';
+    let desc = item.desc || '';
+
+    if(item.badges) {
+        let badges = item.badges.map(badge => `<span class='badge bg-primary rounded-pill'>${badge}</span>`);
+        desc = badges.join(" ") + " " + desc;
+    }
+
     el.innerHTML = `
-        <div class="card">
+        <article class="card">
             <div class="card-img-top ratio ratio-16x9 bg-secondary" style="background: url(${img_url}) ${position} / cover"></div>
             <div class="card-body">
-                <h5 class="card-title">${item.title}</h5>
-                <p class="card-text">${item.desc || ''}</p>
-                ${links.join("\n")}
+                <h3 class="card-title h5">${item.title}</h5>
+                <p class="card-text">${desc}</p>
+                ${links_ul}
             </div>
-        </div>
+        </article>
     `;
 
     if(typeof(item.details) === "string") {
         const tooltip = document.createElement('span');
         tooltip.className = 'btn-tooltip';
         tooltip.tabIndex = 0;
-        el.querySelector('h5').appendChild(tooltip);
+        el.querySelector('h3').appendChild(tooltip);
 
         new bootstrap.Tooltip(
             el.querySelector('span'),
@@ -39,7 +46,7 @@ function build_card(item) {
 }
 
 function build_section(section) {
-    let wrapper = document.createElement('div');
+    let wrapper = document.createElement('section');
 
     let slug = slugify(section.name);
     wrapper.innerHTML += `<h2 id="${slug}" class="mt-5 mb-3">${section.name}</h2>`;
