@@ -157,7 +157,93 @@
             },
             {
                 "title": "How to detect correlations in your data?",
-                "desc": "TBA ???" 
+                "desc": "TBA ???",
+                "details": "<b>keywords:</b> correlations, predictive power score, seaborn"
+            }
+        ]
+    },
+    {
+        "name": "Science",
+        "desc": "Machine Learning / Research related project:",
+        "items": [
+            {
+                "img": "data/emojis-dashboard.jpg",
+                "title": "Emoji Dashboard",
+                "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/emoji_day_2022",
+                    "demo (streamlit cloud)": "asd"
+                },
+                "details": "streamlit, twitter, google cloud engine",
+                "badges": ["Sept'22 - Now"]
+            },
+            {
+                "img": "data/happy-szczurki.jpg",
+                "title": "Happy Szczurki",
+                "desc": "🐀 Research on rats' ultrasonic vocalizations detection and classification.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/happy-szczurki"
+                }
+            },
+            {
+                "img": "https://raw.githubusercontent.com/pkubiak/gym-space-racer/master/screenshot.png",
+                "title": "gym-space-racer ",
+                "desc": "OpenAI gym environment for space ship racing on the futuristic track.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/gym-space-racer",
+                    "sample model (YT)": "https://www.youtube.com/shorts/3qwlICQNqgo"
+                }
+            },
+            {
+                "img": "data/kaggle-notebooks.jpg",
+                "title": "kaggle-notebooks",
+                "desc": "List of Jupyter Notebooks prepared for different Kaggle's competitions.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/kaggle-notebooks"
+                }
+            },
+            {
+                "img": {
+                    "url": "data/statsgrid.jpg",
+                    "position": "left top"
+                },
+                "title": "statsgrid",
+                "desc": "Module for creating Grafana style metrics dashboards in python.",
+                "details": "<b>tools:</b> python, pytest (testing)",
+                "urls": {
+                    "github": "https://github.com/pkubiak/statsgrid",
+                    "demo (binder)": "https://mybinder.org/v2/gh/pkubiak/statsgrid/HEAD?labpath=examples%2Fdemo.ipynb"
+                }
+            },
+            {
+                "title": "confluence-notebook",
+                "desc": "Tool for easy inserting Jupyter Notebooks into Confluence pages."
+            }
+        ]
+    },
+    {
+        "name": "Hackathons",
+        "desc": "Crazy projects created in teams during Hackathons:",
+        "items": [
+            {
+                "img": "data/droply.webp",
+                "title": "HackYeah - droply",
+                "desc": "An idea for an intelligent tap which, counts every drop of water used.",
+                "details": "<b>Hardware:</b> Micro:bit<br><b>Frontend:</b> flask, bootstrap<br><b>Backend (API):</b> node.js, fastify",
+                "urls": {
+                    "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
+                    "pitch": "https://docs.google.com/presentation/d/1RQgFw0VjkjtlAEVrKRk0sKjNEqWIWiqVj7G3RGLJmcI/edit?usp=sharing",
+                    "photos": "https://photos.app.goo.gl/8JCvscM9TJg6aSY69"
+                }
+            },
+            {
+                "img": "data/dejavu.jpg",
+                "title": "BiteHack - Déjà vu",
+                "desc": "An idea for a search engine that will recognize a film based on any remembered detail.",
+                "details": "python, elasticsearch, OpenData",
+                "urls": {
+                    "github": "https://github.com/mkrzywda/BiteHack"
+                }
             }
         ]
     },
@@ -258,91 +344,6 @@
                 "details": "<b>tools:</b> php, leaflet",
                 "urls": {
                     "github": "https://github.com/pkubiak/zettai"
-                }
-            }
-        ]
-    },
-    {
-        "name": "Science",
-        "desc": "Machine Learning / Research related project:",
-        "items": [
-            {
-                "img": "data/emojis-dashboard.jpg",
-                "title": "Emoji Dashboard",
-                "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/emoji_day_2022",
-                    "demo (streamlit cloud)": "asd"
-                },
-                "details": "streamlit, twitter, google cloud engine",
-                "badges": ["Sept'22 - Now"]
-            },
-            {
-                "img": "data/happy-szczurki.jpg",
-                "title": "Happy Szczurki",
-                "desc": "🐀 Research on rats' ultrasonic vocalizations detection and classification.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/happy-szczurki"
-                }
-            },
-            {
-                "img": "https://raw.githubusercontent.com/pkubiak/gym-space-racer/master/screenshot.png",
-                "title": "gym-space-racer ",
-                "desc": "OpenAI gym environment for space ship racing on the futuristic track.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/gym-space-racer",
-                    "sample model (YT)": "https://www.youtube.com/shorts/3qwlICQNqgo"
-                }
-            },
-            {
-                "img": "data/kaggle-notebooks.jpg",
-                "title": "kaggle-notebooks",
-                "desc": "List of Jupyter Notebooks prepared for different Kaggle's competitions.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/kaggle-notebooks"
-                }
-            },
-            {
-                "img": {
-                    "url": "data/statsgrid.jpg",
-                    "position": "left top"
-                },
-                "title": "statsgrid",
-                "desc": "Module for creating Grafana style metrics dashboards in python.",
-                "details": "<b>tools:</b> python, pytest (testing)",
-                "urls": {
-                    "github": "https://github.com/pkubiak/statsgrid",
-                    "demo (binder)": "https://mybinder.org/v2/gh/pkubiak/statsgrid/HEAD?labpath=examples%2Fdemo.ipynb"
-                }
-            },
-            {
-                "title": "confluence-notebook",
-                "desc": "Tool for easy inserting Jupyter Notebooks into Confluence pages."
-            }
-        ]
-    },
-    {
-        "name": "Hackathons",
-        "desc": "Crazy projects created in teams during Hackathons:",
-        "items": [
-            {
-                "img": "data/droply.webp",
-                "title": "HackYeah - droply",
-                "desc": "An idea for an intelligent tap which, counts every drop of water used.",
-                "details": "<b>Hardware:</b> Micro:bit<br><b>Frontend:</b> flask, bootstrap<br><b>Backend (API):</b> node.js, fastify",
-                "urls": {
-                    "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
-                    "pitch": "https://docs.google.com/presentation/d/1RQgFw0VjkjtlAEVrKRk0sKjNEqWIWiqVj7G3RGLJmcI/edit?usp=sharing",
-                    "photos": "https://photos.app.goo.gl/8JCvscM9TJg6aSY69"
-                }
-            },
-            {
-                "img": "data/dejavu.jpg",
-                "title": "BiteHack - Déjà vu",
-                "desc": "An idea for a search engine that will recognize a film based on any remembered detail.",
-                "details": "python, elasticsearch, OpenData",
-                "urls": {
-                    "github": "https://github.com/mkrzywda/BiteHack"
                 }
             }
         ]
