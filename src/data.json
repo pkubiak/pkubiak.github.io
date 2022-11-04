@@ -173,7 +173,7 @@
                 "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
                 "urls": {
                     "github": "https://github.com/pkubiak/emoji_day_2022",
-                    "demo (streamlit cloud)": "https://pkubiak-emoji-day-2022-main-y89dkz.streamlit.app/"
+                    "demo (streamlit cloud)": "https://twitter-emoji.streamlit.app/"
                 },
                 "details": "streamlit, twitter, google cloud engine",
                 "badges": ["Sept'22 - Now"]
