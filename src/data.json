@@ -156,8 +156,9 @@
                 "desc": "Confidence intervals, whys & hows to use them in python."
             },
             {
+                "img": "data/how-to-detect-correlations-in-your-data.jpg",
                 "title": "How to detect correlations in your data?",
-                "desc": "TBA ???",
+                "desc": "Interesting methods for detecting dependencies in data, including predictive power score",
                 "details": "<b>keywords:</b> correlations, predictive power score, seaborn"
             }
         ]
@@ -172,7 +173,7 @@
                 "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
                 "urls": {
                     "github": "https://github.com/pkubiak/emoji_day_2022",
-                    "demo (streamlit cloud)": "asd"
+                    "demo (streamlit cloud)": "https://pkubiak-emoji-day-2022-main-y89dkz.streamlit.app/"
                 },
                 "details": "streamlit, twitter, google cloud engine",
                 "badges": ["Sept'22 - Now"]
@@ -251,8 +252,9 @@
         "name": "Other Stuff",
         "items": [
             {
+                "img": "data/json-resume-theme-daffodil.jpg",
                 "title": "jsonresume-theme-daffodil",
-                "desc": "Json Resume theme created for my curriculum vitae",
+                "desc": "Json-Resume theme created for my curriculum vitae",
                 "urls": {
                     "github": "https://github.com/pkubiak/jsonresume-theme-daffodil"
                 },  
