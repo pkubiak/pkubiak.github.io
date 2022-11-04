@@ -1,0 +1,397 @@
+[
+    {
+        "name": "Game Jams",
+        "desc": "List of projects created/started during a few hours game jams. For fun, implemented mostly using JavaScript. Most of gamejams has been created using <a href=\"https://github.com/pkubiak/gamejam\">GameJam Generator</a>.",
+        "items": [
+            {
+                "img": "data/frozen-fruits.jpg",
+                "title": "Frozen Fruits",
+                "desc": "Frozen Bubble clone with a lot of fruits!",
+                "urls": {
+                    "github": "https://github.com/pkubiak/frozen-fruits",
+                    "play it": "https://pkubiak.github.io/frozen-fruits/"
+                }
+            },
+            {
+                "img": {
+                    "url": "https://github.com/pkubiak/unicode-madness/raw/main/gameplay.png",
+                    "position": "top left"
+                },
+                "title": "Unicode Madness",
+                "desc": "Simple clone of Marble Madness / Neverball.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/unicode-madness",
+                    "play it": "https://pkubiak.github.io/unicode-madness/",
+                    "more levels": "https://github.com/pkubiak/unicode-madness#levels"
+                }
+            },
+            {
+                "img": "https://github.com/pkubiak/gran-trak-2020/raw/master/screenshot.jpg",
+                "title": "Gran Trak 2020",
+                "desc": "Clone of classic Atari racing game Gran Trak 10.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/gran-trak-2020",
+                    "play it": "https://pkubiak.github.io/gran-trak-2020/",
+                    "play with cpu": "https://pkubiak.github.io/gran-trak-2020/#cpu"
+                }
+            },
+            {
+                "img": "data/sh-dungeon.webp",
+                "title": "sh-dungeon",
+                "desc": "Old school 8bit, Pure python dungeon crawler in terminal using self-made RayTracing engine.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/sh-dungeon",
+                    "gameplay (YouTube)": "https://youtu.be/wZLqNSs_UIY"
+                }
+            },
+            {
+                "img": "https://github.com/pkubiak/guess-who/raw/master/screenshot.jpg",
+                "title": "Guess-Who",
+                "desc": "Online multiplayer clone of Guess-Who game with multiple tile sets!",
+                "urls": {
+                    "github": "https://github.com/pkubiak/guess-who",
+                    "play it": "https://pkubiak.github.io/guess-who/"
+                }
+            },
+            {
+                "img": "data/monster-o-brick.jpg",
+                "title": "Monster-o-Brick",
+                "desc": "Simple Post Apocalyptic themed Arkanoid clone.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/monster-o-brick",
+                    "play it": "https://pkubiak.github.io/monster-o-brick/"
+                }
+            },
+            {
+                "img": "data/swim-nemo-swim.jpg",
+                "title": "Swim Nemo Swim",
+                "desc": "Clone of classic Pacman in underwater scenery.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/swim-nemo-swim",
+                    "play it": "https://pkubiak.github.io/swim-nemo-swim/"
+                }
+            },
+            {
+                "img": "data/tetris.jpg",
+                "title": "Tetris",
+                "desc": "Simple Clone of classic Tetris.",
+                "urls": {
+                    "play it": "https://pkubiak.github.io/tetris/"
+                }
+            },
+            {
+                "img": "data/angry-integrals.jpg",
+                "title": "Angry Integrals",
+                "desc": "Memory-like game involving solving integrals.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/angry-integrals",
+                    "play it": "https://pkubiak.github.io/angry-integrals/"
+                }
+            },
+            {
+                "img": "data/easter-dragon.jpg",
+                "title": "Easter Dragon",
+                "desc": "Easter themed javascript clone of classic flappy-bird.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/easter-dragon",
+                    "play it": "https://pkubiak.github.io/easter-dragon/"
+                }
+            },
+            {
+                "img": "data/spotillioners.jpg",
+                "title": "Spotillioners",
+                "desc": "Music version of famous Millionaires game based on your spotify plays history.",
+                "details": "<b>tools:</b> JavaScript, bootstrap, SpotifyAPI"
+            },
+            {
+                "img": "data/emoji-quest.jpg",
+                "title": "Emoji Quest",
+                "desc": "PoC of Fantastic Dizzy style platform game with emojis as main characters.",
+                "badges": ["Sept'22"]
+            }
+        ]
+    },
+    {
+        "name": "Presentations",
+        "desc": "Presentations prepared for various types of speeches:",
+        "items": [
+            {
+                "img": "data/emoji-day-2022.png",
+                "title": "Emoji Day 2022",
+                "desc": "Coding Hackathon organized to celebrate Emoji Day 2022.",
+                "urls": {
+                    "Google Slides": "https://docs.google.com/presentation/d/1rW1hRaCaPh3PTQFc9xAikLvrCkCbnKnHuLSsCsDyQDw/edit?usp=sharing"
+                },
+                "details": "<b>keywords:</b> streamlit, twitter, emoji, data science, python",
+                "badges": ["Aug'22"]
+            },
+            {
+                "img": "https://camo.githubusercontent.com/1fede4c68d884860658b815f78e8a8c92d95ad8d642ecacde6b6665d9fff552f/687474703a2f2f69332e7974696d672e636f6d2f76692f457849635f496e646874672f6d617872657364656661756c742e6a7067",
+                "title": "Language Detection in 7 minutes",
+                "desc": "Language detection using n-gram model for PyCon PL'2020 lightning talks.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/pl.pycon.2020",
+                    "youtube [PL]": "https://www.youtube.com/watch?v=ExIc_Indhtg"
+                },
+                "badges": ["Nov'20"]
+            },
+            {
+                "img": "data/kill-all-the-mutants.jpg",
+                "title": "Keep Calm and Kill all the mutants",
+                "desc": "Short introduction to Mutation Testing in Python.",
+                "details": "<b>keywords:</b> testing, mutpy, ast parsing",
+                "urls": {
+                    "Slides [pptx]": "https://github.com/pkubiak/slides/raw/main/keep-calm-and-kill-all-the-mutants/Keep%20Calm%20and%20Kill%20all%20the%20mutants.pptx"
+                },
+                "badges": ["Nov'18"]
+            },
+            {
+                "img": "data/jupyter-tips-and-tricks.jpg",
+                "title": "Jupyter Notebook: Tips & Tricks",
+                "desc": "Presentation of very useful but often unknown Jupyter functions."
+            },
+            {
+                "img": "data/confidence-intervals.jpg",
+                "title": "Confidence intervals and other tricks for beginners of <s>black magic</s> statistics",
+                "desc": "Confidence intervals, whys & hows to use them in python."
+            },
+            {
+                "img": "data/how-to-detect-correlations-in-your-data.jpg",
+                "title": "How to detect correlations in your data?",
+                "desc": "Interesting methods for detecting dependencies in data, including predictive power score",
+                "details": "<b>keywords:</b> correlations, predictive power score, seaborn"
+            }
+        ]
+    },
+    {
+        "name": "Science",
+        "desc": "Machine Learning / Research related project:",
+        "items": [
+            {
+                "img": "data/emojis-dashboard.jpg",
+                "title": "Emoji Dashboard",
+                "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/emoji_day_2022",
+                    "demo (streamlit cloud)": "https://pkubiak-emoji-day-2022-main-y89dkz.streamlit.app/"
+                },
+                "details": "streamlit, twitter, google cloud engine",
+                "badges": ["Sept'22 - Now"]
+            },
+            {
+                "img": "data/happy-szczurki.jpg",
+                "title": "Happy Szczurki",
+                "desc": "🐀 Research on rats' ultrasonic vocalizations detection and classification.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/happy-szczurki"
+                }
+            },
+            {
+                "img": "https://raw.githubusercontent.com/pkubiak/gym-space-racer/master/screenshot.png",
+                "title": "gym-space-racer ",
+                "desc": "OpenAI gym environment for space ship racing on the futuristic track.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/gym-space-racer",
+                    "sample model (YT)": "https://www.youtube.com/shorts/3qwlICQNqgo"
+                }
+            },
+            {
+                "img": "data/kaggle-notebooks.jpg",
+                "title": "kaggle-notebooks",
+                "desc": "List of Jupyter Notebooks prepared for different Kaggle's competitions.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/kaggle-notebooks"
+                }
+            },
+            {
+                "img": {
+                    "url": "data/statsgrid.jpg",
+                    "position": "left top"
+                },
+                "title": "statsgrid",
+                "desc": "Module for creating Grafana style metrics dashboards in python.",
+                "details": "<b>tools:</b> python, pytest (testing)",
+                "urls": {
+                    "github": "https://github.com/pkubiak/statsgrid",
+                    "demo (binder)": "https://mybinder.org/v2/gh/pkubiak/statsgrid/HEAD?labpath=examples%2Fdemo.ipynb"
+                }
+            },
+            {
+                "title": "confluence-notebook",
+                "desc": "Tool for easy inserting Jupyter Notebooks into Confluence pages."
+            }
+        ]
+    },
+    {
+        "name": "Hackathons",
+        "desc": "Crazy projects created in teams during Hackathons:",
+        "items": [
+            {
+                "img": "data/droply.webp",
+                "title": "HackYeah - droply",
+                "desc": "An idea for an intelligent tap which, counts every drop of water used.",
+                "details": "<b>Hardware:</b> Micro:bit<br><b>Frontend:</b> flask, bootstrap<br><b>Backend (API):</b> node.js, fastify",
+                "urls": {
+                    "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
+                    "pitch": "https://docs.google.com/presentation/d/1RQgFw0VjkjtlAEVrKRk0sKjNEqWIWiqVj7G3RGLJmcI/edit?usp=sharing",
+                    "photos": "https://photos.app.goo.gl/8JCvscM9TJg6aSY69"
+                }
+            },
+            {
+                "img": "data/dejavu.jpg",
+                "title": "BiteHack - Déjà vu",
+                "desc": "An idea for a search engine that will recognize a film based on any remembered detail.",
+                "details": "python, elasticsearch, OpenData",
+                "urls": {
+                    "github": "https://github.com/mkrzywda/BiteHack"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Other Stuff",
+        "items": [
+            {
+                "img": "data/json-resume-theme-daffodil.jpg",
+                "title": "jsonresume-theme-daffodil",
+                "desc": "Json-Resume theme created for my curriculum vitae",
+                "urls": {
+                    "github": "https://github.com/pkubiak/jsonresume-theme-daffodil"
+                },  
+                "details": "json-resume, node.js, html + css",
+                "badges": ["Oct'22"]
+            },
+            {
+                "img": "data/advent-of-code.jpg",
+                "title": "Advent Of Code 2020",
+                "desc": "🎅 🎄 🎁 My solutions for the Advent of Code 2020-2021.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/advent-of-code-2020"
+                }
+            },
+            {
+                "img": "data/spotify-view.jpg",
+                "title": "Spotify View",
+                "desc": "Simple Spotify Artwork Visualization with nice gradient background.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/spotify-view",
+                    "live demo": "https://pkubiak.github.io/spotify/"
+                }
+            },
+            {
+                "img": "data/gamejam.png",
+                "title": "Gamejam Generator",
+                "desc": "Tool for generating randomized gamejam's ideas.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/gamejam",
+                    "live via pyscript": "https://pkubiak.github.io/gamejam/"
+                }
+            },
+            {
+                "img": "data/pylobot.jpg",
+                "title": "pylobot",
+                "desc": "Javascript 3D model viewer for Colobot Game.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/pylobot",
+                    "live demo": "https://pkubiak.github.io/pylobot2/"
+                }
+            },
+            {
+                "img": "data/hearty-playground.jpg",
+                "desc": "Interactive platform for web Technologies e-learning.",
+                "title": "Hearty Playground",
+                "details": "<b>Backend:</b> python, Django<br><b>Frontend:</b> bootstrap<br><b>Deployment:</b> Heroku, AWS S3",
+                "urls": {
+                    "github": "https://github.com/pkubiak/hearty-playground",
+                    "live demo": "https://hearty-playground.herokuapp.com/",
+                    "demo video": "https://www.youtube.com/watch?v=xE4JCkFqSBg"
+                }
+            },
+            {
+                "img": "https://github.com/pkubiak/caves-kml/raw/master/screenshot.jpg",
+                "title": "caves-kml",
+                "desc": "Tool for dumping Jaskinie PGI database into KML/KMZ file suitable for offline browsing in Locus Maps.",
+                "details": "python, web scraping",
+                "urls": {
+                    "github": "https://github.com/pkubiak/caves-kml",
+                    "releases": "https://github.com/pkubiak/caves-kml/releases"
+                }
+            },
+            {
+                "img": {
+                    "url": "https://github.com/pkubiak/sh-presenter/raw/master/examples/cacafire.gif",
+                    "position": "center top"
+                },
+                "title": "sh-presenter",
+                "desc": "Tool for creating and recording shell presentations.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/sh-presenter"
+                }
+            },
+            {
+                "img": "data/raytracer.jpg",
+                "title": "raytracer",
+                "desc": "Raytracer implemented in c++.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/raytracer"
+                }
+            },
+            {
+                "img": {
+                    "url": "https://github.com/pkubiak/zettai/raw/master/screenshot.png",
+                    "position": "center top"
+                },
+                "title": "zettai",
+                "desc": "Tool for creating user defined PoIs collections.",
+                "details": "<b>tools:</b> php, leaflet",
+                "urls": {
+                    "github": "https://github.com/pkubiak/zettai"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Private Projects",
+        "desc": "List of not yet released projects:",
+        "items": [
+            {
+                "title": "spotiglot",
+                "desc": "Script for organizing you music collection by song language."
+            },
+            {
+                "img": "data/gc-badger.jpg",
+                "title": "gc-badger",
+                "desc": "Project for monitoring geocaching projects and badges.",
+                "details": "python, flask, pycaching"
+            },
+            {
+                "img": "data/curlkb.jpg",
+                "title": "CurlKB",
+                "desc": "Raspberry-PI based device for curling training.",
+                "details": "<b>Hardware:</b> RaspberryPi<br><b>Software:</b> Flask"
+            },
+            {
+                "img": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barthel_Fa.png",
+                "title": "master-thesis",
+                "desc": "WIP: Machine Learning approach to <a href=\"https://en.wikipedia.org/wiki/Rongorongo\">Rongorongo</a> glyphs system decipherment."
+            },
+            {
+                "title": "xwg-scanner",
+                "desc": "PoC: Tool for automatic recognition of xWG wood coins.",
+                "details": "python, pillow, text recognition"
+            },
+            {
+                "img": "data/caves-finder.jpg",
+                "title": "caves-finder",
+                "desc": "PoC: An attempt to algorithmically search for caves based on a Digital Elevation Model."
+            },
+            {
+                "img": "data/exploration-map.jpg",
+                "title": "Exploration Map",
+                "desc": "Interactive map of my current underground explorations.",
+                "details": "js, leaflet, flask, cartography",
+                "badges": ["Oct'22"]
+            }
+        ]
+    }
+]
