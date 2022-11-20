@@ -33,3 +33,6 @@
 [submodule "angry-integrals"]
 	path = angry-integrals
 	url = https://github.com/pkubiak/angry-integrals.git
+[submodule "zyrafowaz"]
+	path = zyrafowaz
+	url = https://github.com/pkubiak/zyrafowaz
