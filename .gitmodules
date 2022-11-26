@@ -36,3 +36,6 @@
 [submodule "zyrafowaz"]
 	path = zyrafowaz
 	url = https://github.com/pkubiak/zyrafowaz
+[submodule "infinity-maze"]
+	path = infinity-maze
+	url = https://github.com/pkubiak/infinity-maze.git
