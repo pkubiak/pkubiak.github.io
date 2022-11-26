@@ -227,6 +227,18 @@
         "desc": "Crazy projects created in teams during Hackathons:",
         "items": [
             {
+                "img": "data/zyrafowaz.jpg",
+                "title": "HackYeah - ŻyrafoWąż",
+                "desc": "Arcade / Logic game with lovely Giraffe as a main Hero.",
+                "details": "JavaScript, HTML, CSS",
+                "badges": ["Nov'22"],
+                "urls": {
+                    "github": "https://github.com/pkubiak/zyrafowaz",
+                    "play it": "https://pawelkubiak.me/zyrafowaz/",
+                    "gameplay (YT)": "https://youtu.be/P4Jm67HnNEc"
+                }
+            },
+            {
                 "img": "data/droply.webp",
                 "title": "HackYeah - droply",
                 "desc": "An idea for an intelligent tap which, counts every drop of water used.",
@@ -390,7 +402,7 @@
                 "title": "Exploration Map",
                 "desc": "Interactive map of my current underground explorations.",
                 "details": "js, leaflet, flask, cartography",
-                "badges": ["Oct'22"]
+                "badges": ["Oct'22 - Now"]
             }
         ]
     }
