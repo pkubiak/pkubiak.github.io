@@ -39,3 +39,6 @@
 [submodule "infinity-maze"]
 	path = infinity-maze
 	url = https://github.com/pkubiak/infinity-maze.git
+[submodule "santa-won"]
+	path = santa-won
+	url = https://github.com/pkubiak/santa-won.git
