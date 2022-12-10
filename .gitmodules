@@ -42,3 +42,6 @@
 [submodule "santa-won"]
 	path = santa-won
 	url = https://github.com/pkubiak/santa-won.git
+[submodule "gamejam"]
+	path = gamejam
+	url = https://github.com/pkubiak/gamejam.git
