@@ -217,8 +217,13 @@
                 }
             },
             {
-                "title": "confluence-notebook",
-                "desc": "Tool for easy inserting Jupyter Notebooks into Confluence pages."
+                "title": "nbembed.js",
+                "desc": "Tool for easy inserting Jupyter Notebooks into websites.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/nbembed.js",
+                    "demo": "https://pawelkubiak.me/nbembed.js/docs/example.html"
+                },
+                "badges": ["Feb'23"]
             }
         ]
     },
