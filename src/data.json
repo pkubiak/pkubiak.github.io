@@ -126,6 +126,16 @@
                 "badges": ["Aug'22"]
             },
             {
+                "img": "data/jupyter-tips-and-tricks.jpg",
+                "title": "Jupyter Notebook: Tips & Tricks",
+                "desc": "Presentation of very useful but often unknown Jupyter functions.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/jupyter-notebook-tips-and-tricks",
+                    "slides [pdf]": "https://raw.githubusercontent.com/pkubiak/jupyter-notebook-tips-and-tricks/main/Jupyter.Tips.And.Tricks.pdf"
+                },
+                "badges": ["Dec'21"]
+            },
+            {
                 "img": "https://camo.githubusercontent.com/1fede4c68d884860658b815f78e8a8c92d95ad8d642ecacde6b6665d9fff552f/687474703a2f2f69332e7974696d672e636f6d2f76692f457849635f496e646874672f6d617872657364656661756c742e6a7067",
                 "title": "Language Detection in 7 minutes",
                 "desc": "Language detection using n-gram model for PyCon PL'2020 lightning talks.",
@@ -141,14 +151,9 @@
                 "desc": "Short introduction to Mutation Testing in Python.",
                 "details": "<b>keywords:</b> testing, mutpy, ast parsing",
                 "urls": {
-                    "Slides [pptx]": "https://github.com/pkubiak/slides/raw/main/keep-calm-and-kill-all-the-mutants/Keep%20Calm%20and%20Kill%20all%20the%20mutants.pptx"
+                    "slides [pptx]": "https://github.com/pkubiak/slides/raw/main/keep-calm-and-kill-all-the-mutants/Keep%20Calm%20and%20Kill%20all%20the%20mutants.pptx"
                 },
                 "badges": ["Nov'18"]
-            },
-            {
-                "img": "data/jupyter-tips-and-tricks.jpg",
-                "title": "Jupyter Notebook: Tips & Tricks",
-                "desc": "Presentation of very useful but often unknown Jupyter functions."
             },
             {
                 "img": "data/confidence-intervals.jpg",
