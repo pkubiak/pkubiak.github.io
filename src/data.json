@@ -173,6 +173,15 @@
         "desc": "Machine Learning / Research related project:",
         "items": [
             {
+                "title": "nbembed.js",
+                "desc": "Tool for easy inserting Jupyter Notebooks into websites.",
+                "urls": {
+                    "github": "https://github.com/pkubiak/nbembed.js",
+                    "demo": "https://pawelkubiak.me/nbembed.js/docs/example.html"
+                },
+                "badges": ["Feb'23"]
+            },
+            {
                 "img": "data/emojis-dashboard.jpg",
                 "title": "Emoji Dashboard",
                 "desc": "Streamlit dashboard for analyzing Emoji usage in Twitter Tweets.",
@@ -220,15 +229,6 @@
                     "github": "https://github.com/pkubiak/statsgrid",
                     "demo (binder)": "https://mybinder.org/v2/gh/pkubiak/statsgrid/HEAD?labpath=examples%2Fdemo.ipynb"
                 }
-            },
-            {
-                "title": "nbembed.js",
-                "desc": "Tool for easy inserting Jupyter Notebooks into websites.",
-                "urls": {
-                    "github": "https://github.com/pkubiak/nbembed.js",
-                    "demo": "https://pawelkubiak.me/nbembed.js/docs/example.html"
-                },
-                "badges": ["Feb'23"]
             }
         ]
     },
@@ -257,7 +257,8 @@
                     "presentation": "https://docs.google.com/presentation/d/1za9E13SXkE-XfziKE77fQ2-Lzavoc6Sqpw93iBCx-Wc/edit?usp=sharing",
                     "pitch": "https://docs.google.com/presentation/d/1RQgFw0VjkjtlAEVrKRk0sKjNEqWIWiqVj7G3RGLJmcI/edit?usp=sharing",
                     "photos": "https://photos.app.goo.gl/8JCvscM9TJg6aSY69"
-                }
+                },
+                "badges": ["Nov'20"]
             },
             {
                 "img": "data/dejavu.jpg",
@@ -286,7 +287,7 @@
             {
                 "img": "data/advent-of-code.jpg",
                 "title": "Advent Of Code 2020",
-                "desc": "🎅 🎄 🎁 My solutions for the Advent of Code 2020-2021.",
+                "desc": "🎅 🎄 🎁 My solutions for the Advent of Code 2020-2022.",
                 "urls": {
                     "github": "https://github.com/pkubiak/advent-of-code-2020"
                 }
