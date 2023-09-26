@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+</head>
+<body onload="init()">
+
+<div style="display: inline-block;border-radius:32px 32px 16px 16px;padding: 16px;padding-bottom:8px;background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+<div style="width:480px;height:480px;overflow:hidden;background:white; border-radius: 24px;">
+<canvas width="480" height="480" id="canvas" style="margin:0 0 0 -480px;"></canvas>
+</div>
+<div id="hud"  style="padding:8px; display: flex; margin:0; font-family: 'Bungee Shade', cursive; color: white;font-size:24px;line-height: 30px;">
+    <span id="score" style="flex-grow:1; text-align:left"></span>
+    <span id="count"></span>
+</div>
+</div>
+<div style="width: 0; height: 0;overflow: hidden;">
+<img src="turtle.png" id="item0"/>
+<img src="item1.png"  id="item1"/>
+<img src="item2.png"  id="item2"/>
+<img src="item3.png"  id="item3"/>
+<img src="item4.png"  id="item4"/>
+<img src="pattern.png" id="pattern"/>
+</div>
+<script>
+
+function init(){
+    console.log("init");
+    let is_clicked = false;
+    let coords = [];
+    let best_score = 0, total_score = 0, count=0;
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let mask = null;
+    
+    const pattern = ctx.createPattern(document.querySelector('#pattern'), "repeat");
+    let startTime = null;
+    const size = 300;
+
+    function updateScore(score) {
+        if(score > best_score)
+            best_score = score;
+        total_score += score;
+        if(score > 0)count += 1
+        document.querySelector('#score').innerHTML = 'Total Score: ' + total_score;
+        document.querySelector('#count').innerText = "🎁 x " + count;
+    }
+    function countPixels(target) {
+        let data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        let count = 0;
+        for(let i=0;i<data.length;i+=4) {
+            let color = '#' + (data[i+3]+(data[i+2]<<8) + (data[i+1]<<16) + (data[i] << 24) + (0x100000000)).toString(16).substr(1); 
+            if(color === target) count++;
+        }
+        return count;
+    }
+
+    function restart() {
+        mask = document.querySelector('#item' + parseInt(Math.random()*5));
+        updateScore(0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(mask, (canvas.width - size)/2, (canvas.height - size)/2, size, size);
+
+        canvas.style.pointerEvents = '';
+        canvas.style.transition = 'margin 1s';
+        canvas.style.margin = '0';
+        ctx.strokeStyle = '#cf0014';
+        ctx.lineWidth = 16;
+        ctx.lineCap = ctx.lineJoin = 'round';
+    }
+
+    function handleEvent(t, e) {
+        let rect = e.target.getBoundingClientRect();
+        let x = e.clientX - rect.left; //x position within the element.
+        let y = e.clientY - rect.top;  //y position within the element.
+
+        if(t == 'start') {
+            is_clicked = true;
+            startTime = Date.now();
+            coords = [[x,y]];
+        } else
+        if(t == 'move' && is_clicked) {
+            ctx.beginPath();
+            let [prevx, prevy] = coords[coords.length - 1];
+            ctx.moveTo(prevx, prevy);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            coords.push([x,y]);
+        } else
+        if(t == 'end') {
+            if(is_clicked) {
+                finishTime = Date.now();
+                coords.push([x,y]);
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(mask, (canvas.width - size)/2, (canvas.height - size)/2, size, size);
+                ctx.globalCompositeOperation = 'source-in';
+                ctx.fillStyle = '#000';
+                ctx.rect(0, 0, canvas.width, canvas.height);
+                ctx.fill();
+                ctx.globalCompositeOperation = 'source-over';
+
+                to_wrap_pixels = countPixels('#000000ff');
+
+                ctx.fillStyle = pattern;
+                ctx.beginPath();
+                ctx.moveTo(coords[0][0], coords[0][1]);
+                for(let i=1;i<coords.length;i++)
+                    ctx.lineTo(coords[i][0], coords[i][1]);
+                ctx.lineTo(coords[0][0], coords[0][1]);
+                ctx.fill();
+                ctx.stroke();
+
+                canvas.style.pointerEvents = 'none';
+                non_wrapped_pixels = countPixels('#000000ff');
+                total_wrapped_pixels = canvas.width * canvas.height - countPixels("#00000000");
+                wrapping_precision = to_wrap_pixels / total_wrapped_pixels;
+
+                let duration = (finishTime - startTime)/1000.0;
+                let points = Math.floor(1000 * wrapping_precision / Math.pow(duration+1, 0.25));
+                
+                console.log(">> score:", non_wrapped_pixels> 0 ? "failed" : "success", wrapping_precision, duration, points);
+                if(non_wrapped_pixels === 0) {
+                    updateScore(points);
+                    canvas.style.margin = '0 0 0 480px';
+                } else {
+                    canvas.style.margin = '480px 0 0 0';
+                }
+
+                setTimeout(function(){
+                    canvas.style.transition = '';
+                    canvas.style.margin = '0 0 0 -480px';
+                    setTimeout(restart, 100);
+                }, 1000);
+            }
+            is_clicked = false;
+
+        }
+    }
+
+    document.querySelector("#canvas").addEventListener('mousedown', (e) => handleEvent('start', e));
+    document.querySelector("#canvas").addEventListener('mouseup', (e) => handleEvent('end', e));
+    document.querySelector("#canvas").addEventListener('mouseout', (e) => handleEvent('end', e));
+    document.querySelector("#canvas").addEventListener('mousemove',(e) => handleEvent('move', e));
+
+    restart();
+}
+
+</script>
+</body>
+</html>
