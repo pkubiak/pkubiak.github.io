@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <title>Gift Wrapper</title>
+    <meta name="viewport" content="width=540, user-scalable=no" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+<style>
+body, html{
+    margin:0; padding:0;
+    overflow: hidden;
+    width: 540px;
+    height: 700px;
+}
+body {
+    /* font-family: 'Bungee Shade', cursive; */
+    /* font-family: 'Mountains of Christmas', cursive; */
+    font-family: 'Titan One', cursive;
+    color: white;font-size:24px;line-height: 30px;
+    /* background: rgba(255,90,0,1); */
+}
+h2{font-weight: 400;}
+#board {
+    display: inline-block;
+    border-radius:16px;
+    padding: 8px 16px;
+    background: rgba(255,90,0,1);
+    
+}
+#wrapper {
+    display:inline-block;
+    margin:0 auto;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+</style>
 </head>
 <body onload="init()">
 
-<div style="display: inline-block;border-radius:32px 32px 16px 16px;padding: 16px;padding-bottom:8px;background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
-<div style="width:480px;height:480px;overflow:hidden;background:white; border-radius: 24px;">
-<canvas width="480" height="480" id="canvas" style="margin:0 0 0 -480px;"></canvas>
-</div>
-<div id="hud"  style="padding:8px; display: flex; margin:0; font-family: 'Bungee Shade', cursive; color: white;font-size:24px;line-height: 30px;">
-    <span id="score" style="flex-grow:1; text-align:left"></span>
-    <span id="count"></span>
-</div>
+<div id="wrapper">
+    <h2 style="color: black; text-align: center">Gift Wrapper</h2>
+    <div id="board">
+        <div style="text-align: center; padding: 8px; pointer-events: none; ">Time: 34.1</div>
+        <div style="width:480px;height:480px;overflow:hidden;background:white; border-radius: 24px;">
+            <canvas width="480" height="480" id="canvas" style="margin:0 0 0 -480px;"></canvas>
+        </div>
+        <div id="hud" style="pointer-events:none; padding :8px; display: flex; margin:0; ">
+            <span id="score" style="flex-grow:1; text-align:left"></span>
+            <span id="count"></span>
+        </div>
+    </div>
 </div>
 <div style="width: 0; height: 0;overflow: hidden;">
 <img src="turtle.png" id="item0"/>
@@ -37,7 +73,7 @@ function init(){
     let mask = null;
     
     const pattern = ctx.createPattern(document.querySelector('#pattern'), "repeat");
-    let startTime = null;
+    let startTime = null;   
     const size = 300;
 
     function updateScore(score) {
@@ -48,6 +84,7 @@ function init(){
         document.querySelector('#score').innerHTML = 'Total Score: ' + total_score;
         document.querySelector('#count').innerText = "🎁 x " + count;
     }
+
     function countPixels(target) {
         let data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
         let count = 0;
@@ -73,9 +110,11 @@ function init(){
     }
 
     function handleEvent(t, e) {
+        
         let rect = e.target.getBoundingClientRect();
-        let x = e.clientX - rect.left; //x position within the element.
-        let y = e.clientY - rect.top;  //y position within the element.
+        let x = (e.clientX || e.targetTouches[0]?.clientX) - rect.left; //x position within the element.
+        let y = (e.clientY || e.targetTouches[0]?.clientY) - rect.top;  //y position within the element.
+        console.log(t, e, x, y);
 
         if(t == 'start') {
             is_clicked = true;
@@ -93,7 +132,7 @@ function init(){
         if(t == 'end') {
             if(is_clicked) {
                 finishTime = Date.now();
-                coords.push([x,y]);
+                // coords.push([x,y]);
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(mask, (canvas.width - size)/2, (canvas.height - size)/2, size, size);
@@ -123,28 +162,40 @@ function init(){
                 let points = Math.floor(1000 * wrapping_precision / Math.pow(duration+1, 0.25));
                 
                 console.log(">> score:", non_wrapped_pixels> 0 ? "failed" : "success", wrapping_precision, duration, points);
-                if(non_wrapped_pixels === 0) {
-                    updateScore(points);
-                    canvas.style.margin = '0 0 0 480px';
-                } else {
-                    canvas.style.margin = '480px 0 0 0';
-                }
 
                 setTimeout(function(){
-                    canvas.style.transition = '';
-                    canvas.style.margin = '0 0 0 -480px';
-                    setTimeout(restart, 100);
-                }, 1000);
+                    if(non_wrapped_pixels === 0) {
+                        updateScore(points);
+                        canvas.style.margin = '0 0 0 480px';
+                    } else {
+                        canvas.style.margin = '480px 0 0 0';
+                    }
+
+                    setTimeout(function(){
+                        canvas.style.transition = '';
+                        canvas.style.margin = '0 0 0 -480px';
+                        setTimeout(restart, 100);
+                    }, 1000);
+                }, 250);
             }
             is_clicked = false;
-
         }
     }
 
-    document.querySelector("#canvas").addEventListener('mousedown', (e) => handleEvent('start', e));
-    document.querySelector("#canvas").addEventListener('mouseup', (e) => handleEvent('end', e));
-    document.querySelector("#canvas").addEventListener('mouseout', (e) => handleEvent('end', e));
-    document.querySelector("#canvas").addEventListener('mousemove',(e) => handleEvent('move', e));
+    const events = {
+        'mousedown': 'start',
+        'mouseup': 'end',
+        // 'mouseout': 'end',
+        'mousemove': 'move',
+
+        'touchstart': 'start',
+        'touchend': 'end',
+        'touchcancel': 'end',
+        'touchmove': 'move'
+    };
+
+    for(let event in events)
+        document.querySelector("#canvas").addEventListener(event, (e) => handleEvent(events[event], e));
 
     restart();
 }
