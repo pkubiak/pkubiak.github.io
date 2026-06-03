@@ -45,3 +45,6 @@
 [submodule "gamejam"]
 	path = gamejam
 	url = https://github.com/pkubiak/gamejam.git
+[submodule "ai-meadow"]
+	path = ai-meadow
+	url = git@github.com:pkubiak/ai-meadow.git
